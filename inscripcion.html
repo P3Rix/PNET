@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+		<title>Inscripción</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+  </head>
+  <body>
+      <header>
+        
+          <div id = "head">
+            <img class = "cabecera" src = "Imagenes/Cabecera_v2.PNG"/>
+          </div>
+
+          <a href = "inscripcion.html"><img id = "inscripcion" class = "direccion" SRC="Imagenes/Inscribete.PNG"/></a>
+          <img id = "localizacion" class = "direccion" SRC="Imagenes/Localización.PNG"/>
+          <img id = "programacion" class = "direccion" SRC="Imagenes/Programación.PNG"/>
+
+      </header>
+      <div>
+        <div id = "bloque_formulario">
+          <form id = "formulario" action = "inscripciones.php" method="post">
+            <label for = "nombre">Nombre: </label>
+            <input type="text" name = "nombre">
+            <br>
+            <label for= "apellidos">Apellidos: </label>
+            <input type = "text" name = "apellidos">
+            <br>
+            <label for = "fecha">Fecha de nacimiento: </label>
+            <input type="date" name = "fecha">
+            <br>
+            <label for= "dni">DNI: </label>
+            <input type = "text" name = "dni">
+            <br>
+            <label for = "telefono">Tlf de contacto: </label>
+            <input type="number" name = "telefono">
+            <br>
+            <label for= "email">E-mail: </label>
+            <input type = "mail" name = "email">
+            <br>
+            <input id = "boton_enviar" type="submit" value="ENVIAR SOLICITUD">
+          </form>
+
+        </div>
+
+      </div>
+      <footer>
+        <div class = "footer">
+          <img id = "footer" class = "direccion" SRC="Imagenes/Hola.PNG"/>
+          <p class = "hola">©IkkaniPeriSA</p>
+          <p class = "hola">FreeSamsung@gmail.com</p>
+        <div>
+      </footer>
+  </body>
+</html>

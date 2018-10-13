@@ -8,6 +8,7 @@
 body{
   width: 100%;
   margin: auto;
+  background-color: #F4F4F4;
 }
 
 h1{
@@ -22,8 +23,41 @@ h1{
   margin-right: 10%;
 }
 
+#bloque_formulario{
+  width: 40%;
+  border-radius: 3%;
+  margin-top: 1%;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  background-color: #c3c3c3;
+}
+
+
+#formulario{
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#boton_enviar{
+  outline:none;
+  margin-top: 5%;
+  font-size: 20px;
+  margin-left: 40%;
+  background-color: black;
+  color: white;
+}
+
+form label {
+    display: inline-block;
+    width: 160px;
+}
+
 li{
   padding-bottom: 5%;
+  list-style: ;
 }
 
 .texto{
@@ -58,7 +92,6 @@ li{
   margin-left: 80%;
   color: white;
 }
-
 
 #head{
   margin-left: -0.7%;
