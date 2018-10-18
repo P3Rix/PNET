@@ -38,6 +38,18 @@
             <label for= "email" id = "field_email" >E-mail: </label>
             <input type = "mail" name = "email" onclick= "pulsoCampo(name)" >
             <br>
+            <label for = "inscripciones">Tipo de inscripcion: </label>
+            <select name="carlist" form="formulario">
+              <option value="1">1 día</option>
+              <option value="2">2 días</option>
+              <option value="3">3 días</option>
+            </select>
+            <br>
+            <label for = "fecha_ini">Fecha inicio: </label>
+            <input type = "date" name ="fecha_ini">
+            <br>
+            <label for = "fecha_fin">Fecha fin: </label>
+            <input type = "date" name ="fecha_fin">
             <input id = "boton_enviar" type="submit" value="ENVIAR SOLICITUD">
           </form>
 
@@ -48,7 +60,7 @@
         <div class = "footer">
           <img id = "footer" class = "direccion" SRC="Imagenes/Hola.PNG"/>
           <p class = "hola">©IkkaniPeriSA</p>
-          <p class = "hola">FreeSamsung@gmail.com</p>
+          <a href ="mailto:pruebasSDperi@gmail.com"><p class = "hola">FreeSamsung@gmail.com</p>
         <div>
       </footer>
   </body>
