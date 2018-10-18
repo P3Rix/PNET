@@ -3,6 +3,7 @@
     <meta charset="utf-8">
 		<title>Inscripción</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script type="text/javascript" src="validacion-formulario.js"></script>
   </head>
   <body>
       <header>
@@ -18,7 +19,7 @@
       </header>
       <div>
         <div id = "bloque_formulario">
-          <form id = "formulario" action = "inscripciones.php" method="post">
+          <form id = "formulario" method="post" action = "#" onsubmit = "return validarFormulario(this)">
             <label for = "nombre">Nombre: </label>
             <input type="text" name = "nombre">
             <br>
