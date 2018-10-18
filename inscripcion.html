@@ -20,23 +20,23 @@
       <div>
         <div id = "bloque_formulario">
           <form id = "formulario" method="post" action = "#" onsubmit = "return validarFormulario(this)">
-            <label for = "nombre">Nombre: </label>
-            <input type="text" name = "nombre">
+            <label for = "nombre" id = "field_nombre"  >Nombre: </label>
+            <input type="text" name = "nombre" onclick= "pulsoCampo(name)" >
             <br>
-            <label for= "apellidos">Apellidos: </label>
-            <input type = "text" name = "apellidos">
+            <label for= "apellidos" id = "field_apellidos" >Apellidos: </label>
+            <input type = "text" name = "apellidos" onclick= "pulsoCampo(name)" >
             <br>
-            <label for = "fecha">Fecha de nacimiento: </label>
-            <input type="date" name = "fecha">
+            <label for = "fecha" id = "field_fecha" >Fecha de nacimiento: </label>
+            <input type="date" name = "fecha" >
             <br>
-            <label for= "dni">DNI: </label>
-            <input type = "text" name = "dni">
+            <label for= "dni" id = "field_dni" >DNI: </label>
+            <input type = "text" name = "dni" onclick= "pulsoCampo(name)" >
             <br>
-            <label for = "telefono">Tlf de contacto: </label>
-            <input type="number" name = "telefono">
+            <label for = "telefono" id = "field_telefono" >Tlf de contacto: </label>
+            <input type="text" name = "telefono" onclick= "pulsoCampo(name)" >
             <br>
-            <label for= "email">E-mail: </label>
-            <input type = "mail" name = "email">
+            <label for= "email" id = "field_email" >E-mail: </label>
+            <input type = "mail" name = "email" onclick= "pulsoCampo(name)" >
             <br>
             <input id = "boton_enviar" type="submit" value="ENVIAR SOLICITUD">
           </form>
