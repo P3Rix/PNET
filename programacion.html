@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+		<title>Programacion</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script type="text/javascript" src="validacion-formulario.js"></script>
+  </head>
+  <body>
+      <header>
+
+          <div id = "head">
+            <a href = "index.html"><img class = "cabecera" src = "Imagenes/Cabecera_v2.PNG"/>
+          </div>
+
+          <a href = "inscripcion.html"><img id = "inscripcion" class = "direccion" SRC="Imagenes/Inscribete.PNG"/></a>
+          <img id = "localizacion" class = "direccion" SRC="Imagenes/Localización.PNG"/>
+          <a href = "programacion.html"><img id = "programacion" class = "direccion" SRC="Imagenes/Programación.PNG"/></a>
+
+      </header>
+
+      <div style = "display: flex;">
+        <div class = "programacion_horarios">
+          <br>
+          <div id = "recuadro_botones">
+            <input type = "button" value = "Viernes" onclick = "cambiarhorarios();">
+            <input type = "button" value = "Sábado" onclick = "cambiarhorarios();">
+            <input type = "button" value = "Domingo" onclick = "cambiarhorarios();">
+          </div>
+          <br>
+          <div class = "esquema_horarios" id = "viernes">
+            <ul>
+              <li><img src = "Imagenes/apple.png" width="30" height="30"/>Iphone: 15:00-16:00</li>
+              <li><img src = "Imagenes/android.png" width="30" height="30"/>Android: 16:00-17:00</li>
+              <li><img src = "Imagenes/apple.png" width="30" height="30"/>IOS: 17:00-18:00</li>
+              <li><img src = "Imagenes/bq.png" width="30" height="30"/> bq: 18:00-19:30</li>
+              <li><img src = "Imagenes/lg.png" width="30" height="30"/> LG: 19:30-21:00</li>
+            </ul>
+          </div>
+          <div class = "esquema_horarios" id = "sabado">
+            <p>Samsung: 15:00-16:00</p>
+            <p>Samsung: 15:00-16:00</p>
+            <p>Samsung: 15:00-16:00</p>
+            <p>Samsung: 15:00-16:00</p>
+            <p>Samsung: 15:00-16:00</p>
+          </div>
+          <div class = "esquema_horarios" id = "domingo">
+
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class = "footer">
+          <img id = "footer" class = "direccion" SRC="Imagenes/Hola.PNG"/>
+          <p class = "hola">©IkkaniPeriSA</p>
+          <a href ="mailto:pruebasSDperi@gmail.com"><p class = "hola">FreeSamsung@gmail.com</p>
+        <div>
+      </footer>
+  </body>
+</html>

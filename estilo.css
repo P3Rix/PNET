@@ -58,7 +58,7 @@ form label {
 
 li{
   padding-bottom: 5%;
-  list-style: ;
+  list-style: none;
 }
 
 .texto{
@@ -123,4 +123,42 @@ li{
   left: 70%;
   top: 80%;
   width: 25%;
+}
+
+.programacion_horarios{
+  width: 30%;
+  background-color: grey;
+}
+
+#recuadro_botones{
+  background-color: #570000;
+  width: 52%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*cambiar el estilo de los botones de la programacion*/
+#recuadro_botones > input{
+  background-color: #570000;
+  font-size: 14px;
+  color: white;
+  outline: none;
+  border: none;
+
+}
+
+.esquema_horarios{
+  width: 70%;
+  font-size: 20;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*en principio estas 2 estarán ocultas*/
+#sabado{
+  display: none;
+}
+
+#domingo{
+  display: none;
 }
