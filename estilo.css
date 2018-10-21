@@ -5,6 +5,10 @@
   height: 95%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   width: 100%;
   margin: auto;
@@ -49,6 +53,17 @@ h1{
   margin-left: 40%;
   background-color: black;
   color: white;
+}
+
+
+#boton_scroll{
+  position: absolute;
+  width: 5%;
+  left: 45%;
+  top: 90%;
+  opacity: 0.6;
+
+
 }
 
 form label {
