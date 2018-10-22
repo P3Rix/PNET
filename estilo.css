@@ -153,13 +153,13 @@ li{
 }
 
 /*cambiar el estilo de los botones de la programacion*/
-#recuadro_botones > input{
+#recuadro_botones > button{
   background-color: #570000;
   font-size: 14px;
   color: white;
   outline: none;
   border: none;
-
+  cursor:pointer;
 }
 
 .esquema_horarios{

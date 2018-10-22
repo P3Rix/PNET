@@ -4,6 +4,8 @@
 		<title>Programacion</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <script type="text/javascript" src="validacion-formulario.js"></script>
+      <script type="text/javascript" src="programacion.js"></script>
+
   </head>
   <body>
       <header>
@@ -22,9 +24,9 @@
         <div class = "programacion_horarios">
           <br>
           <div id = "recuadro_botones">
-            <input type = "button" value = "Viernes" onclick = "cambiarhorarios();">
-            <input type = "button" value = "Sábado" onclick = "cambiarhorarios();">
-            <input type = "button" value = "Domingo" onclick = "cambiarhorarios();">
+            <button type="button" id="Friday" onclick = "cambiarhorarios(this.id);">Viernes</button>
+            <button type="button" id="Saturday" onclick = "cambiarhorarios(this.id);">Sábado</button>
+            <button type="button" id="Sunday" onclick = "cambiarhorarios(this.id);">Domingo</button>
           </div>
           <br>
           <div class = "esquema_horarios" id = "viernes">
@@ -44,7 +46,11 @@
             <p>Samsung: 15:00-16:00</p>
           </div>
           <div class = "esquema_horarios" id = "domingo">
-
+            <p>Paula: 15:00-16:00</p>
+            <p>Paula: 15:00-16:00</p>
+            <p>Paula: 15:00-16:00</p>
+            <p>Paula: 15:00-16:00</p>
+            <p>Paula: 15:00-16:00</p>
           </div>
         </div>
       </div>
