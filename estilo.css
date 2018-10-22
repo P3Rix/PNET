@@ -145,6 +145,11 @@ li{
   background-color: grey;
 }
 
+.programacion_conferencias{
+  width: 70%;
+  background-color: white;
+}
+
 #recuadro_botones{
   background-color: #570000;
   width: 52%;
