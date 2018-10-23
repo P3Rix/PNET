@@ -78,7 +78,7 @@ li{
 
 
 li > p{
-  margin: auto; 
+  margin: auto;
   float: right;
 }
 
@@ -148,7 +148,7 @@ li > p{
 
 .programacion_horarios{
   width: 30%;
-  height: 70%;
+  height: 60%;
   background-color: grey;
 }
 
