@@ -76,6 +76,12 @@ li{
   list-style: none;
 }
 
+
+li > p{
+  margin: auto; 
+  float: right;
+}
+
 .texto{
   width: 60%;
   text-align: justify;
@@ -142,6 +148,7 @@ li{
 
 .programacion_horarios{
   width: 30%;
+  height: 70%;
   background-color: grey;
 }
 
