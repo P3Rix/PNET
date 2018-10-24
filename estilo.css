@@ -189,3 +189,31 @@ li > p{
 #domingo{
   display: none;
 }
+
+/*localizacion*/
+.localizacion_izquierda{
+  float: left;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 40%;
+}
+
+.localizacion_derecha{
+  float: right;
+  width: 60%;
+  border-radius: 2%;
+  margin: 2%;
+  background-color: rgba(156,156,156,0.2);
+}
+
+.localizacion_derecha > p{
+  margin: 2%;
+  text-align: justify;
+}
+
+#mapa{
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
