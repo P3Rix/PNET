@@ -24,6 +24,6 @@ var imagenes=new Array(
         // Cargamos una imagen aleatoria
         rotarImagenes();
 
-        // Indicamos que cada 5 segundos cambie la imagen
+        // Indicamos que cada 4 segundos cambie la imagen
         setInterval(rotarImagenes,4000);
     }

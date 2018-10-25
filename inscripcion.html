@@ -1,4 +1,6 @@
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,34 +12,34 @@
       <header>
 
           <div id = "head">
-            <a href = "index.html"><img class = "cabecera" src = "Imagenes/Cabecera_v2.PNG"/>
+            <a href = "index.html"><img class = "cabecera" src = "Imagenes/Cabecera_v2.PNG" alt ="imagen cabecera"/>
           </div>
 
-          <a href = "inscripcion.html"><img id = "inscripcion" class = "direccion" SRC="Imagenes/Inscribete.PNG"/></a>
-          <img id = "localizacion" class = "direccion" SRC="Imagenes/Localización.PNG"/>
-          <a href = "programacion.html"><img id = "programacion" class = "direccion" SRC="Imagenes/Programación.PNG"/></a>
+          <a href = "inscripcion.html"><img id = "inscripcion" class = "direccion" SRC="Imagenes/Inscribete.PNG" alt ="imagen cabecera"/></a>
+          <img id = "localizacion" class = "direccion" SRC="Imagenes/Localización.PNG" alt ="imagen cabecera"/>
+          <a href = "programacion.html"><img id = "programacion" class = "direccion" SRC="Imagenes/Programación.PNG" alt ="imagen cabecera"/></a>
 
       </header>
       <div>
         <div id = "bloque_formulario">
           <form id = "formulario" method="post" action = "#" onsubmit = "return validarFormulario(this)">
             <label for = "nombre" id = "field_nombre"  >Nombre: </label>
-            <input type="text" name = "nombre" onclick= "pulsoCampo(name)" >
+            <input type="text" name = "nombre" onclick= "pulsoCampo(name)"/>
             <br>
             <label for= "apellidos" id = "field_apellidos" >Apellidos: </label>
-            <input type = "text" name = "apellidos" onclick= "pulsoCampo(name)" >
+            <input type = "text" name = "apellidos" onclick= "pulsoCampo(name)"/>
             <br>
             <label for = "fecha" id = "field_fecha" >Fecha de nacimiento: </label>
-            <input type="date" name = "fecha" >
+            <input type="date" name = "fecha"/>
             <br>
             <label for= "dni" id = "field_dni" >DNI: </label>
-            <input type = "text" name = "dni" onclick= "pulsoCampo(name)" >
+            <input type = "text" name = "dni" onclick= "pulsoCampo(name)"/>
             <br>
             <label for = "telefono" id = "field_telefono" >Tlf de contacto: </label>
-            <input type="text" name = "telefono" onclick= "pulsoCampo(name)" >
+            <input type="text" name = "telefono" onclick= "pulsoCampo(name)"/>
             <br>
             <label for= "email" id = "field_email" >E-mail: </label>
-            <input type = "mail" name = "email" onclick= "pulsoCampo(name)" >
+            <input type = "mail" name = "email" onclick= "pulsoCampo(name)"/>
             <br>
             <label for = "inscripciones">Tipo de inscripcion: </label>
             <select name="carlist" form="formulario">
@@ -47,11 +49,11 @@
             </select>
             <br>
             <label for = "fecha_ini">Fecha inicio: </label>
-            <input type = "date" name ="fecha_ini">
+            <input type = "date" name ="fecha_ini"/>
             <br>
             <label for = "fecha_fin">Fecha fin: </label>
-            <input type = "date" name ="fecha_fin">
-            <input id = "boton_enviar" type="submit" value="ENVIAR SOLICITUD">
+            <input type = "date" name ="fecha_fin"/>
+            <input id = "boton_enviar" type="submit" value="ENVIAR SOLICITUD"/>
           </form>
 
         </div>
@@ -59,7 +61,7 @@
       </div>
       <footer>
         <div class = "footer">
-          <img id = "footer" class = "direccion" SRC="Imagenes/Hola.PNG"/>
+          <img id = "footer" class = "direccion" SRC="Imagenes/Hola.PNG" alt ="imagen footer"/>
           <p class = "hola">©IkkaniPeriSA</p>
           <a href ="mailto:pruebasSDperi@gmail.com"><p class = "hola">FreeSamsung@gmail.com</p>
         <div>
