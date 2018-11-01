@@ -65,7 +65,28 @@ function pulsoCampo(name){
 
 
 
+function fechaMaxima(fechainicio, obj){
+	obj.min = "2018-11-2" + (parseInt(fechainicio[9]));
+}
 
 
+function texto(cual) {
+	switch (cual){
+
+		case "normal":
+			document.getElementById('par_precios').innerHTML = "Soy normal";
+		break;
+
+		case "vip":
+			document.getElementById('par_precios').innerHTML = "Soy vip";
+		break;
+
+		case "platinum":
+			document.getElementById('par_precios').innerHTML = "Soy platinum ";
+		break;
+
+
+	}
+}
 
 

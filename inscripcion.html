@@ -42,29 +42,28 @@
             <br>
             <label for = "inscripciones">Tipo de inscripcion: </label>
             <select name="carlist" form="formulario" id = "inscripciones">
-              <option value="1">1 día</option>
-              <option value="2">2 días</option>
-              <option value="3">3 días</option>
+              <option value="1">Entrada normal</option>
+              <option value="2">Entrada VIP</option>
+              <option value="3">Entrada Platinum</option>
             </select>
             <br>
             <label for = "fecha_ini">Fecha inicio: </label>
-            <input type = "date" name ="fecha_ini" id = "fecha_ini"/>
+            <input type = "date" name ="fecha_ini" id = "fecha_ini" min="2018-11-23" max = "2018-11-25"/>
             <br>
             <label for = "fecha_fin">Fecha fin: </label>
-            <input type = "date" name ="fecha_fin" id = "fecha_fin"/>
+            <input type = "date" name ="fecha_fin" id = "fecha_fin" onclick = "fechaMaxima(fecha_ini.value, this)" min="2018-11-23" max ="2018-11-25"/>
             <input id = "boton_enviar" type="submit" value="ENVIAR SOLICITUD"/>
           </form>
         </div>
 
         <div id = "abonos">
           <h1>Precios</h1>
-              <p>1 día: 45€</p>
-              <p>Abono 2 días: 75€</p>
-              <p>Abono 3 días: 120€</p>
-              <p style = "font-weight: bold;">Ahorra más de un 10% al adquirir más de 1 día</p>
-              <p>No se admiten devoluciones con un plazo cercano a la fecha de la realización de menos de 1 semana con respecto al día de inicio.</p>
+             <div id = "botones_precios">
+                <h2 onclick="texto('normal')">Entrada normal</h2>
+                <h2 onclick="texto('vip')">Entrada VIP</h2>
+                <h2 onclick="texto('platinum')">Entrada Platinum</h2></div>
+                  <p id = "par_precios"></p>
         </div>
-
       </div>
       <footer>
         <div class = "footer">
@@ -84,3 +83,4 @@
       </footer>
   </body>
 </html>
+
