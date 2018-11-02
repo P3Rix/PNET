@@ -31,12 +31,28 @@ h1{
 
 #bloque_formulario{
   float: left;
-  width: 45%;
+  width: 35%;
   border-radius: 3%;
   margin-top: 1%;
   margin-left: 2%;
   margin-bottom: 1%;
   background-color: #c3c3c3;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border-radius: 70px 0px 70px 0px;
+  -moz-border-radius: 70px 0px 70px 0px;
+  -webkit-border-radius: 70px 0px 70px 0px;
+  border: 2px solid #5878ca;
+}
+
+
+#foto_noticia1{
+  width: 15%;
+  border-radius: 100px 100px 100px 100px;
+
+
 }
 
 #abonos{
