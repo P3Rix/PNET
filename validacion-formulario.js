@@ -74,15 +74,20 @@ function texto(cual) {
 	switch (cual){
 
 		case "normal":
-			document.getElementById('par_precios').innerHTML = "Soy normal";
+			document.getElementById('par_precios').innerHTML = "<p>Con el abono normal, tendrás acceso a todas las conferencias e instalaciones.</p><h2>"
+			+ "Precio por días</h2><ul><li>Un día: 50€</li><li>Dos días: 90€</li><li>Tres días: 130€</li></ul>";
 		break;
 
 		case "vip":
-			document.getElementById('par_precios').innerHTML = "Soy vip";
+			document.getElementById('par_precios').innerHTML = "<p>Con el abono VIP, tendrás acceso a todas las conferencias e instalaciones. Además, tendrás ventajas tales como "
+			+ "sitio reservado en posiciones privilegiadas en todas las conferencias.</p><h2>"
+			+ "Precio por días</h2><ul><li>Un día: 65€</li><li>Dos días: 110€</li><li>Tres días: 150€</li></ul>";
 		break;
 
 		case "platinum":
-			document.getElementById('par_precios').innerHTML = "Soy platinum ";
+			document.getElementById('par_precios').innerHTML = "<p>Con el abono Platinum, tendrás acceso a todas las conferencias e instalaciones. Además, tendrás ventajas tales como "
+			+ "sitio reservado en posiciones privilegiadas en todas las conferencias y la posibilidad de probar productos de las compañias asistentes que aún no están disponibles para el público.</p><h2>"
+			+ "Precio por días</h2><ul><li>Un día: 80€</li><li>Dos días: 145€</li><li>Tres días: 195€</li></ul>";
 		break;
 
 

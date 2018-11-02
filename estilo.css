@@ -48,21 +48,22 @@ h1{
 }
 
 
-#foto_noticia1{
-  width: 15%;
+.foto_noticia{
+  width: 75px;
   border-radius: 100px 100px 100px 100px;
 
 
 }
 
 #abonos{
-  float: right;
+  float: left;
   font-size: 20px;
   margin-right: 2%;
   border-radius: 3%;
   margin-top: 1%;
+  margin-left: 5%;
   margin-bottom: 1%;
-  width: 45%;
+  width: 30%;
   min-height: 335px;
   background-color: #c3c3c3;
   padding-top: 20px;
@@ -76,9 +77,24 @@ h1{
 
 }
 
-#botones_precios{
-  max-height: 30px;
-}
+#izq{
+    width: 33%;
+    margin-left: 7%;
+    height: 100%;
+    float:left;
+  }
+
+  #centro{
+    width: 27%;
+    height: 100%;
+    float:left;
+  }
+
+  #der{
+    width: 30%;
+    height: 100%;
+    float:left;
+  }
 
 
 #abonos > p{
