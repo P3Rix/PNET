@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Inicio</title>
     <link rel="stylesheet" type="text/css" href="estilo.css"/>
-    <script type="text/javascript" src="index.js"></script>
+    <script src="index.js"></script>
 
   </head>
   <body>
@@ -16,7 +16,9 @@
 
         <a href = "inscripcion.html#inscripcion"><img id = "inscripcion" class = "direccion" SRC="Imagenes/Inscribete.PNG" alt ="imagen cabecera"/> </a>
         <a href = "localizacion.html#inscripcion"><img id = "localizacion" class = "direccion" SRC="Imagenes/Localización.PNG" alt ="imagen cabecera"/></a>
-        <a href="#bienvenida"><img id = "boton_scroll" class = "direccion" SRC="Imagenes/scroll.PNG" onmouseover = "estableceOpacidad('boton_scroll', 1)" onmouseout="estableceOpacidad('boton_scroll', 0.6)" alt ="imagen cabecera" /></a>
+        <a href="#bienvenida"><img id = "boton_scroll" class = "direccion" SRC="Imagenes/scroll.PNG" 
+         onblur="estableceOpacidad('boton_scroll', 1)" onfocus="estableceOpacidad('boton_scroll', 1)" 
+         onmouseover = "estableceOpacidad('boton_scroll', 1)" onmouseout="estableceOpacidad('boton_scroll', 0.6)" alt ="imagen cabecera" /></a>
 
         <a href = "programacion.html#inscripcion"><img id = "programacion" class = "direccion" SRC="Imagenes/Programación.PNG" alt ="imagen cabecera"/></a>
 
@@ -31,7 +33,7 @@
           de las principales marcas y compañías punteras en el sector, así como
           importantes representantes de las mismas donde jlsdflkjsdlfjdslfkjsdl.
         </p>
-        <p>El acto inaugural será el día 23 de noviembre y el día final el 26.
+        <p>El acto inaugural será el día viernes 23 de noviembre y el día final el domingo 25 de noviembre.
         </p>
         <p>
           Suspendisse convallis pulvinar justo, nec tristique eros vulputate interdum.
@@ -69,9 +71,9 @@
 
       <aside class = "noticia">
         <ul>
-          <li><a href="noticia1.html" ><img src="./Imagenes/xiaomiMiMix3.jpg" class ="foto_noticia">Xiaomi anuncia su próximo producto estrella: Mi MIX 3</a></li>
-          <li><a href="noticia2.html"><img src="./Imagenes/Android.jpg" class ="foto_noticia" >Android domina el tercer trimestre de 2018 con un 86,8% de cuota de mercado, según IDC</a></li>
-          <li><a href="noticia3.html"><img src="./Imagenes/huawei.jpg" class ="foto_noticia""> Huawei se consolida como el principal perseguidor de Samsung y Xiaomi se acerca a Apple</a></li>
+          <li><a href="noticia1.html" ><img src="./Imagenes/xiaomiMiMix3.jpg" class ="foto_noticia" alt = "imagen noticia">Xiaomi anuncia su próximo producto estrella: Mi MIX 3</a></li>
+          <li><a href="noticia2.html"><img src="./Imagenes/Android.jpg" class ="foto_noticia" alt = "imagen noticia">Android domina el tercer trimestre de 2018 con un 86,8% de cuota de mercado, según IDC</a></li>
+          <li><a href="noticia3.html"><img src="./Imagenes/huawei.jpg" class ="foto_noticia" alt = "imagen noticia"> Huawei se consolida como el principal perseguidor de Samsung y Xiaomi se acerca a Apple</a></li>
         </ul>
       </aside>
     </div>

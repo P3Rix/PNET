@@ -20,6 +20,8 @@ h1{
   margin-left: 1%;
   color: #40A0D8;
 }
+
+/*index*/
 #bienvenida{
   float: left;
   margin-right: 5%;
@@ -27,6 +29,48 @@ h1{
 #h1noticias{
   float: right;
   margin-right: 10%;
+}
+
+.foto_noticia{
+  width: 75px;
+  border-radius: 100px 100px 100px 100px;
+}
+
+#boton_scroll{
+  position: absolute;
+  width: 5%;
+  left: 45%;
+  top: 90%;
+  opacity: 0.6;
+}
+
+.texto{
+  width: 60%;
+  text-align: justify;
+  float: left;
+}
+
+.container{
+  position: static;
+  width: 100%;
+}
+
+.noticia{
+  width:30%;
+  float: right;
+  background-color: GHOSTWHITE;
+}
+
+.parrafo{
+  margin-left: 1%;
+}
+
+/*inscripcion*/
+#inscripcion{
+  position: absolute;
+  left: 5%;
+  top: 80%;
+  width: 23%;
 }
 
 #bloque_formulario{
@@ -47,14 +91,6 @@ h1{
   border: 2px solid #5878ca;
 }
 
-
-.foto_noticia{
-  width: 75px;
-  border-radius: 100px 100px 100px 100px;
-
-
-}
-
 #abonos{
   float: left;
   font-size: 20px;
@@ -63,7 +99,7 @@ h1{
   margin-top: 1%;
   margin-left: 5%;
   margin-bottom: 1%;
-  width: 30%;
+  width: 40%;
   min-height: 335px;
   background-color: #c3c3c3;
   padding-top: 20px;
@@ -77,23 +113,28 @@ h1{
 
 }
 
+
 #izq{
     width: 33%;
-    margin-left: 7%;
+    margin-left: 0%;
     height: 100%;
     float:left;
+    cursor: pointer;
   }
 
   #centro{
     width: 27%;
+    margin-left: 6%;
     height: 100%;
     float:left;
+    cursor: pointer;
   }
 
   #der{
     width: 30%;
     height: 100%;
-    float:left;
+    float:right;
+    cursor: pointer;
   }
 
 
@@ -121,17 +162,7 @@ h1{
   color: white;
 }
 
-
-#boton_scroll{
-  position: absolute;
-  width: 5%;
-  left: 45%;
-  top: 90%;
-  opacity: 0.6;
-
-
-}
-
+/*generico*/
 form label {
     display: inline-block;
     width: 190px;
@@ -148,26 +179,7 @@ li > p{
   float: right;
 }
 
-.texto{
-  width: 60%;
-  text-align: justify;
-  float: left;
-}
 
-.container{
-  position: static;
-  width: 100%;
-}
-
-.noticia{
-  width:30%;
-  float: right;
-  background-color: GHOSTWHITE;
-}
-
-.parrafo{
-  margin-left: 1%;
-}
 
 .footer{
   margin-left: -0.7%;
@@ -194,20 +206,7 @@ li > p{
   margin-bottom: -10%;
 }
 
-#inscripcion{
-  position: absolute;
-  left: 5%;
-  top: 80%;
-  width: 23%;
-}
-
-#localizacion{
-  position: absolute;
-  left: 38%;
-  top: 80%;
-  width: 25%;
-}
-
+/*programacion*/
 #programacion{
   position: absolute;
   left: 70%;
@@ -269,12 +268,23 @@ li > p{
   width: 40%;
 }
 
+#localizacion{
+  position: absolute;
+  left: 38%;
+  top: 80%;
+  width: 25%;
+}
+
 .localizacion_derecha{
   float: right;
   width: 60%;
   border-radius: 2%;
   margin: 2%;
   background-color: rgba(156,156,156,0.2);
+    border-radius: 35px 0px 35px 0px;
+  -moz-border-radius: 35px 0px 35px 0px;
+  -webkit-border-radius: 35px 0px 35px 0px;
+  border: 2px solid #5878ca;
 }
 
 .localizacion_derecha > p{
