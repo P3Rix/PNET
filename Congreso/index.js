@@ -6,8 +6,8 @@ const path = require('path');
 const PORT = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 const baseAPI = '/api/v1';
-const mobiles = require('./routes/mobiles');
-const mobilesService = require('./routes/mobiles-service');
+const users = require('./routes/users');
+const usersService = require('./routes/users-service');
 const cors = require('cors');
 
 app.use(cors());
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 extended: true
 }));
 
-app.use('/mobiles', mobiles);
+app.use('/users', users);
 
 app.get('/', function (req, res) {
     res.send('Hello World!');
@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 
 const server = http.createServer(app);
 
-mobilesService.connectDb(function (err) {
+usersService.connectDb(function (err) {
     if (err) {
         console.log("Could not connect with MongoDB - mobilesService");
         process.exit(1);

@@ -3,10 +3,10 @@
 const MongoClient = require('mongodb').MongoClient;
 let db;
 let ObjectId = require('mongodb').ObjectID;
-const Mobiles = function () {
+const Users = function () {
 };
 
-Mobiles.prototype.connectDb = function (callback) {
+Users.prototype.connectDb = function (callback) {
     MongoClient.connect("mongodb://admin:admin1@ds039351.mlab.com:39351/pnet-joseperinan",
         {useNewUrlParser: true},
         function (err, database) {
@@ -14,34 +14,34 @@ Mobiles.prototype.connectDb = function (callback) {
                 callback(err);
             }
 
-            db = database.db('pnet-joseperinan').collection('mobiles');
+            db = database.db('pnet-joseperinan').collection('users');
 
             callback(err, database);
         });
 };
 
-Mobiles.prototype.add = function (mobile, callback) {
-    return db.insert(mobile, callback);
+Users.prototype.add = function (user, callback) {
+    return db.insert(user, callback);
 };
 
-Mobiles.prototype.get = function (_id, callback) {
+Users.prototype.get = function (_id, callback) {
     return db.find({_id: ObjectId(_id)}).toArray(callback);
 };
 
-Mobiles.prototype.getAll = function (callback) {
+Users.prototype.getAll = function (callback) {
     return db.find({}).toArray(callback);
 };
 
-Mobiles.prototype.update = function (_id, updatedMobile, callback) {
+Users.prototype.update = function (_id, updatedUser, callback) {
     delete updatedMobile._id;
-    return db.updateOne({_id: ObjectId(_id)}, {$set: updatedMobile}, callback);};
+    return db.updateOne({_id: ObjectId(_id)}, {$set: updatedUser}, callback);};
 
-Mobiles.prototype.remove = function (_id, callback) {
+Users.prototype.remove = function (_id, callback) {
     return db.deleteOne({_id: ObjectId(_id)}, callback);
 };
 
-Mobiles.prototype.removeAll = function (callback) {
+Users.prototype.removeAll = function (callback) {
     return db.deleteMany({}, callback);
 };
 
-module.exports = new Mobiles();
+module.exports = new Users();
