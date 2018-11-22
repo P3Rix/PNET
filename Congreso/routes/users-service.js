@@ -33,7 +33,7 @@ Users.prototype.getAll = function (callback) {
 };
 
 Users.prototype.update = function (_id, updatedUser, callback) {
-    delete updatedMobile._id;
+    delete updatedUser._id;
     return db.updateOne({_id: ObjectId(_id)}, {$set: updatedUser}, callback);};
 
 Users.prototype.remove = function (_id, callback) {
