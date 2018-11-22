@@ -30,7 +30,7 @@ function postUser(formulario) {
             
         }),
         success: function(data) {
-            $("#resGetHello").html(data);
+            $("#resGetHello").html();
         },
         error: function(res) {
             alert("ERROR " + res.statusText);
@@ -43,9 +43,9 @@ function getUsers()
     $.ajax({
         type: "GET",
         url: "http://localhost:8080/users/",
-        dataType: "text",
+        dataType: "JSON",
         success: function(data){
-            $("#resGetHello").html(data);      },
+            $("#resGetHello").html(formatJSON(data));      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
