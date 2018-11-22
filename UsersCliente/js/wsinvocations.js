@@ -15,6 +15,7 @@ function postUser(formulario) {
         url: "http://localhost:8080/users/",
         contentType: "application/json",
         dataType: "text",
+        async: false,
         data: JSON.stringify({
             "firstname": formulario.nombre.value,
             "lastname": formulario.apellidos.value,
