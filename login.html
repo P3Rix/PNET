@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+    <script type="text/javascript" src="login.js"></script>	
+</head>
+<body>
+	<center>
+	<div id= "div_admin" style="margin-top: 10%; font-size: 20px;">
+    <form method="post" action = "#" onsubmit = "return validateAdmin(this)">
+    	<label for= "user" id = "field_user" >User: </label>
+        <br>
+        <input type = "text" required name = "user" id = "user"/>
+        <br>
+        <label for= "password" id = "field_password" >Password: </label>
+        <br>
+        <input type = "text" required name = "password" id = "password"/>
+        <br>
+        <input id = "button_login" type="submit" value="Login" style="margin-top: 1%; font-size: 15px;"/>
+
+    </form>
+    </div>
+    </center>
+
+</body>
+</html>
