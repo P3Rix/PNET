@@ -44,8 +44,10 @@ function validarFormulario(formulario){
 
 		bool = false;
 	}
-
-
+	
+	if(bool)
+		postUser(formulario);
+	console.log(bool);
 	return bool;
 }
 

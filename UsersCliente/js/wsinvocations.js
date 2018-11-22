@@ -9,15 +9,24 @@ function getHello(){
     });
 }
 
-function postUser(nombre, apellido) {
+function postUser(formulario) {
     $.ajax({
         type: "POST",
         url: "http://localhost:8080/users/",
         contentType: "application/json",
         dataType: "text",
         data: JSON.stringify({
-            "firstname": nombre,
-            "lastname": apellido,
+            "firstname": formulario.nombre.value,
+            "lastname": formulario.apellidos.value,
+            "birthdate": formulario.fecha.value,
+            "DNI": formulario.dni.value,
+            "telephone": formulario.telefono.value,
+            "email": formulario.email.value,
+            "inscription type": formulario.inscripciones.value,
+            "start date": formulario.fecha_ini.value,
+            "finish date": formulario.fecha_fin.value,
+
+            
         }),
         success: function(data) {
             $("#resGetHello").html(data);
