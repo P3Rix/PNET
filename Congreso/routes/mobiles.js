@@ -2,35 +2,35 @@
 
 const express = require('express');
 const router = express.Router();
-const mobilesService = require('./mobiles-service');
+const usersService = require('./users-service');
 
 router.get('/', function (req, res) {
-    mobilesService.getAll((err, mobiles) => {
+    usersService.getAll((err, users) => {
             if (err) {
                 res.status(500).send({
                     msg: err
                 });
-            } else if (mobiles === null){
+            } else if (users === null){
                 res.status(500).send({
-                    msg: "mobiles null"
+                    msg: "users null"
                 });
-            } else if (mobiles !== null) {
-                res.status(200).send(mobiles);
+            } else if (users !== null) {
+                res.status(200).send(users);
             }
         }
     );
 });
 
 router.post('/', function (req, res) {
-    let mobile = req.body;
-    mobilesService.add(mobile, (err, mobile) => {
+    let user = req.body;
+    usersService.add(user, (err, user) => {
             if (err) {
                 res.status(500).send({
                     msg: err
                 });
-            } else if (mobile !== null) {
+            } else if (user !== null) {
                 res.send({
-                    msg: 'Mobile created!'
+                    msg: 'User created!'
                 });
             }
         }
@@ -38,14 +38,14 @@ router.post('/', function (req, res) {
 });
 
 router.delete('/', function (req, res) {
-    mobilesService.removeAll((err) => {
+    usersService.removeAll((err) => {
         if (err) {
             res.status(500).send({
                 msg: err
             });
         } else {
             res.status(200).send({
-                msg: 'Mobiles deleted!'
+                msg: 'Users deleted!'
             });
         }
     });
@@ -53,15 +53,15 @@ router.delete('/', function (req, res) {
 
 router.put('/:_id', function (req, res) {
     const _id = req.params._id;
-    const updatedMobile = req.body;
-    mobilesService.update(_id, updatedMobile, (err, numUpdates) => {
+    const updatedUser = req.body;
+    usersService.update(_id, updatedUser, (err, numUpdates) => {
         if (err || numUpdates === 0) {
             res.status(500).send({
                 msg: err
             });
         } else {
             res.status(200).send({
-                msg: 'Mobile updated!'
+                msg: 'User updated!'
             });
         }
     });
@@ -69,14 +69,14 @@ router.put('/:_id', function (req, res) {
 
 router.delete('/:_id', function (req, res) {
     let _id = req.params._id;
-    mobilesService.remove(_id, (err) => {
+    usersService.remove(_id, (err) => {
         if (err) {
             res.status(404).send({
                 msg: err
             });
         } else {
             res.status(200).send({
-                msg: 'Mobile deleted!'
+                msg: 'User deleted!'
             });
         }
     });
@@ -85,17 +85,17 @@ router.delete('/:_id', function (req, res) {
 
 router.get('/:_id', function (req, res) {
     let _id = req.params._id;
-    mobilesService.get(_id, (err, mobile) => {
+    usersService.get(_id, (err, user) => {
             if (err) {
                 res.status(500).send({
                     msg: err
                 });
-            } else if (mobile === null){
+            } else if (user === null){
                 res.status(500).send({
-                    msg: "Mobile null"
+                    msg: "User null"
                 });
-            } else if (mobile !== null) {
-                res.status(200).send(mobile);
+            } else if (user !== null) {
+                res.status(200).send(user);
             }
         }
     );
