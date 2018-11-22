@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript"  src="js/wsinvocations.js"></script>
+</head>
+<body>
+<h1>Hello World Client</h1>
+
+<input type="button" value="GET HELLO" onclick="getHello()" />
+<input type="button" value="GET HELLO 2" onclick="getHello2()" />
+<input type="text" id="movieId">
+<input onclick="postMovie()" type="button" value="POST MOVIE 'Dunkirk'"/>
+<input onclick="getMovies()" type="button" value="Sacar peliculas"/>
+<input onclick="getMovie($('#movieId').val())" type="button" value="GET MOVIE"/>
+<input onclick="putMovie($('#movieId').val())" type="button" value="PUT MOVIE"/>
+<input onclick="deleteMovies()" type="button" value="Borrar todas las peliculas"/>
+<input onclick="deleteMovie()" type="button" value="Borrar una pelicula"/>
+
+<h1>Formulario películas</h1>
+<form>
+    Title: <input type="text" id="title">
+    Director: <input type="text" id="director">
+    Release: <input type="text" id="year">
+</form>
+
+
+<input onclick="postMovie($('#title').val(), $('#director').val(), $('#year').val())" type="button" value="POST MOVIE"/>
+
+
+<h3 id="resGetHello"></h3>
+</body>
+</html>
