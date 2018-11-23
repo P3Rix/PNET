@@ -1,30 +1,58 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <title>Admin</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
   <script type="text/javascript" src="UsersCliente/js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript"  src="UsersCliente/js/wsinvocations.js"></script>
   <script type="text/javascript"  src="UsersCliente/js/funcionesAux.js"></script>
 </head>
-<body>
-  <h1>Ver cosas</h1>
-    <input type="button" value="GET HELLO" onclick="getHello()">
-    <input type="button" value="GET HELLO 2" onclick="getHello2()">
-    <h2>Mostrar usuarios registrados</h2>
-    <input type="button" value="Obtener usuarios"  onclick="getUsers()">
-    <h2>Borrar todos los usuarios</h2>
-    <input type="button" value="Borrar todos los usuarios"  onclick="deleteUsers()">
-    <h2></h2>
-    <input type="text" id="movieId">
-    <input type="button" value="Pillar usuario" onclick="getUser($('#movieId').val())" />
-    <input type="button" value="Modificar usuario" onclick="putUser($('#movieId').val())">
-    <input type="button" value="Borrar usuario" onclick="deleteMovie($('#movieId').val())">
 
-    <h1>Formulario películas</h1>
-  <form>
-    Nombre: <input type="text" id="name">
-    Apellido: <input type="text" id="apellido">
-  </form>
-    <input onclick="postUser($('#name').val(),$('#apellido').val())" type="button" value="POST MOVIE">
-    
-    <h3 id="resGetHello"></h3>
+<body>
+    <div id="check_container">
+       <div>
+        <label class="switch">
+          <input type="checkbox" id="getUsers" onclick="checkPressed(this.id)">
+          <span class="slider round"></span>
+        </label>
+        <span class="checkbox_text">Obtener todos los usuarios</span>
+       </div>
+      <br>
+       <div>
+        <label class="switch">
+          <input type="checkbox" id="deleteUsers" onclick="checkPressed(this.id)">
+          <span class="slider round"></span>
+        </label>
+        <span class="checkbox_text">Borrar todos los usuarios</span>
+       </div>
+      <br>
+       <div>
+        <label class="switch">
+          <input type="checkbox" id="getUser" onclick="checkPressed(this.id)">
+          <span class="slider round"></span>
+        </label>
+        <span class="checkbox_text">Obtener usuario</span>
+       </div>
+      <br>
+       <div>
+        <label class="switch">
+          <input type="checkbox" id="putUser" onclick="checkPressed(this.id)">
+          <span class="slider round"></span>
+        </label>
+        <span class="checkbox_text">Modificar usuario</span>        
+       </div>
+      <br>
+       <div>
+        <label class="switch">
+          <input type="checkbox" id="deleteMovie" onclick="checkPressed(this.id)">
+          <span class="slider round"></span>
+        </label>
+        <span class="checkbox_text">Borrar usuario</span>
+    </div>
+    </div>
+
+    <h1 id="resUser"></h1>
+
+
 </body>
 </html>

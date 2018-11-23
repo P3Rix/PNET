@@ -3,7 +3,7 @@ function getHello(){
         type: "GET",
         url: "http://localhost:8080/",
         success: function(data){
-            $("#resGetHello").html(data);      },
+            $("#resUser").html(data);      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
@@ -30,7 +30,7 @@ function postUser(formulario) {
             
         }),
         success: function(data) {
-            $("#resGetHello").html();
+            $("#resUser").html();
         },
         error: function(res) {
             alert("ERROR " + res.statusText);
@@ -45,7 +45,7 @@ function getUsers()
         url: "http://localhost:8080/users/",
         dataType: "JSON",
         success: function(data){
-            $("#resGetHello").html(formatJSON(data));      },
+            $("#resUser").html(formatJSON(data));      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
@@ -56,7 +56,7 @@ function getUser(id){
         type: "GET",
         url: "http://localhost:8080/users/" + id,
         success: function(data){
-            $("#resGetHello").html(JSON.stringify(data));      },
+            $("#resUser").html(JSON.stringify(data));      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
@@ -72,7 +72,7 @@ function putUser(id){
             "year": 2017
         },
         success: function(data){
-            $("#resGetHello").html(JSON.stringify(data));      },
+            $("#resUser").html(JSON.stringify(data));      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
@@ -85,7 +85,7 @@ function deleteUsers()
         url: "http://localhost:8080/users/",
         dataType: "text",
         success: function(data){
-            $("#resGetHello").html(data);      },
+            $("#resUser").html(data);      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
@@ -98,7 +98,7 @@ function deleteUser(id)
         url: "http://localhost:8080/users/" + id,
         dataType: "text",
         success: function(data){
-            $("#resGetHello").html(data);      },
+            $("#resUser").html(data);      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
