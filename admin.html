@@ -12,7 +12,7 @@
     <div id="check_container">
        <div>
         <label class="switch">
-          <input type="checkbox" id="getUsers" onclick="checkPressed(this.id)">
+          <input type="checkbox" id="getUsers_admin" onclick="checkPressed(this.id,searchForm)">
           <span class="slider round"></span>
         </label>
         <span class="checkbox_text">Obtener todos los usuarios</span>
@@ -20,7 +20,7 @@
       <br>
        <div>
         <label class="switch">
-          <input type="checkbox" id="deleteUsers" onclick="checkPressed(this.id)">
+          <input type="checkbox" id="deleteUsers_admin" onclick="checkPressed(this.id,searchForm)">
           <span class="slider round"></span>
         </label>
         <span class="checkbox_text">Borrar todos los usuarios</span>
@@ -28,7 +28,7 @@
       <br>
        <div>
         <label class="switch">
-          <input type="checkbox" id="getUser" onclick="checkPressed(this.id)">
+          <input type="checkbox" id="getUser_admin" onclick="checkPressed(this.id,searchForm)">
           <span class="slider round"></span>
         </label>
         <span class="checkbox_text">Obtener usuario</span>
@@ -36,7 +36,7 @@
       <br>
        <div>
         <label class="switch">
-          <input type="checkbox" id="putUser" onclick="checkPressed(this.id)">
+          <input type="checkbox" id="putUser_admin" onclick="checkPressed(this.id,searchForm)">
           <span class="slider round"></span>
         </label>
         <span class="checkbox_text">Modificar usuario</span>        
@@ -44,15 +44,28 @@
       <br>
        <div>
         <label class="switch">
-          <input type="checkbox" id="deleteMovie" onclick="checkPressed(this.id)">
+          <input type="checkbox" id="deleteMovie_admin" onclick="checkPressed(this.id,searchForm)">
           <span class="slider round"></span>
         </label>
         <span class="checkbox_text">Borrar usuario</span>
     </div>
     </div>
 
-    <h1 id="resUser"></h1>
+    <div id = "formBox">
+      <form id = searchForm method="get" onsubmit="getUser_admin(this)">
+        <label for = "telefono" id = "field_telefono"  >Telefono: </label>
+            <input type="text" name = "Telefono" id = "telefono"/>
+          <br>
+        <label for = "DNI" id = "field_DNI"  >DNI: </label>
+            <input type="text" name = "DNI" id = "DNI"/>
+          <br>
+            <input id = "boton_buscar" type="submit" value="BUSCAR"/>
+      </form>
+    </div>
 
+    <div id="outputBox">
+    <p id="resUser"></p>
+    </div>
 
 </body>
 </html>

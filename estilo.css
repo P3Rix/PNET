@@ -194,6 +194,21 @@ li > p{
 /*admin.html*/
 
 /* The switch - the box around the slider */
+#outputBox{
+  padding-left: 60%;
+  word-wrap: break-word;
+  margin-right: 100px;
+  padding-top: 1px;
+
+}
+
+li#resUser{
+  background: #5EB9F4;
+  list-style-position: inside;
+  list-style-type: circle;
+}
+
+
 .switch {
   position: relative;
   display: inline-block;

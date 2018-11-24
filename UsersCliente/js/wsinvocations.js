@@ -51,7 +51,7 @@ function getUsers()
     });
 }
 
-function getUser(id){
+function getUser(id, dni){
     $.ajax({
         type: "GET",
         url: "http://localhost:8080/users/" + id,
