@@ -23,7 +23,7 @@ function formatJSON(dataset){
 }
 
 
-var check_list = ["getUsers", "deleteUsers", "getUser", "putUser", "deleteMovie"]
+var check_list = ["getUsers", "deleteUsers", "getUser", "putUser", "deleteUser"]
 
 function checkPressed(checkID){
 
