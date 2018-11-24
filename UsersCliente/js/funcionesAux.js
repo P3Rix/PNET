@@ -23,41 +23,34 @@ function formatJSON(dataset){
 }
 
 
-var check_list = ["getUsers_admin", "deleteUsers_admin", "getUser_admin", "putUser_admin", "deleteMovie_admin"]
+var check_list = ["getUsers", "deleteUsers", "getUser", "putUser", "deleteMovie"]
 
-function checkPressed(checkID, form){
+function checkPressed(checkID){
 
-	for (check in check_list){
+	for (check in check_list){ //Ponemos el resto de botones a false
 		if (check_list[check] != checkID)
 			document.getElementById(check_list[check]).checked = false;
 	}
 
-	if (document.getElementById(checkID).checked == true)
-		window[checkID](form);
+	if (document.getElementById(checkID).checked == true){
+		if(checkID == 'getUsers' || checkID == 'deleteUsers')
+			window[checkID]();
+		else if(document.getElementById('telefono').value != "")
+			window[checkID](document.getElementById('telefono').value , 'telephone');
+		else if(document.getElementById('DNI').value != "")
+			window[checkID](document.getElementById('DNI').value, 'DNI');
+		else{ 
+			document.getElementById(checkID).checked = false;
+			alert('Rellene el campo DNI o el campo telefono');		
+		}
+	}
 }
 
 
-function getUsers_admin(){
-	getUsers();
-}
 
 
-function deleteUsers_admin(){
-	deleteUsers();
-}
+function borrar(id){
 
-
-function getUser_admin(form){
-	getUser();
-}
-
-
-function putUser_admin(){
+	document.getElementById(id).value = "";
 
 }
-
-
-function deleteMovie_admin(){
-
-}
-

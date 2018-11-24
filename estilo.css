@@ -193,11 +193,25 @@ li > p{
 
 /*admin.html*/
 
+#global_operations{
+  display: inline-block;  
+  position: sticky;
+  padding-left: 30px;
+  padding-top: 10px;
+
+}
+
+
+#particular_operations{
+  display: inline-block;  
+  padding-left: 100px;
+}
+
+
 /* The switch - the box around the slider */
 #outputBox{
-  padding-left: 60%;
+  text-align: center;
   word-wrap: break-word;
-  margin-right: 100px;
   padding-top: 1px;
 
 }
