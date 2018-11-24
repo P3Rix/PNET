@@ -51,12 +51,12 @@ function getUsers()
     });
 }
 
-function getUser(key, choose){
+function getUser(key){
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/users/",
+        url: "http://localhost:8080/users/" + key,
         success: function(data, choose){
-            $("#resUser").html(JSON.stringify(data));      },
+            $("#resUser").html(formatJSON(data));      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });

@@ -4,6 +4,8 @@ const express = require('express');
 const router = express.Router();
 const usersService = require('./users-service');
 
+let nifRexp = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]$/i;
+
 router.get('/', function (req, res) {
     usersService.getAll((err, users) => {
             if (err) {
@@ -85,7 +87,13 @@ router.delete('/:_id', function (req, res) {
 
 router.get('/:_id', function (req, res) {
     let _id = req.params._id;
-    usersService.get(_id, (err, user) => {
+    let _cad;
+    if(!nifRexp.test(_id))
+        _cad = "telephone";
+    else
+        _cad = "dni";
+    //alert(_cad);
+    usersService.get(_id, _cad, (err, user) => {
             if (err) {
                 res.status(500).send({
                     msg: err
