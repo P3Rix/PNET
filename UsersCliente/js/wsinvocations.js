@@ -44,6 +44,7 @@ function getUsers()
         type: "GET",
         url: "http://localhost:8080/users/",
         dataType: "JSON",
+        async: false,        
         success: function(data){
             $("#resUser").html(formatJSON(data));      },
         error:function(res){
@@ -51,25 +52,35 @@ function getUsers()
     });
 }
 
-function getUser(key){
+function getUser(key, put = false){
     $.ajax({
         type: "GET",
         url: "http://localhost:8080/users/" + key,
         success: function(data, choose){
-            $("#resUser").html(formatJSON(data));      },
+        if (!put)    
+            $("#resUser").html(formatJSON(data));
+        else $("#putUserDiv").html(html_putUser(data)) ;      },
         error:function(res){
             alert("ERROR: "+ res.statusText);  }
     });
 }
 
-function putUser(id){
+function putUser(formulario, dni){
+    alert(dni);
     $.ajax({
-        type: "PUT",
-        url: "http://localhost:8080/users/" + id,
+        type: "PUT",        
+        url: "http://localhost:8080/users/" + dni,
+        async: false,
         data: {
-            "title": "Dunkirk",
-            "director": "David Corral",
-            "year": 2017
+            "firstname": formulario.nombre.value,
+            "lastname": formulario.apellidos.value,
+            "birthdate": formulario.fecha.value,
+            "DNI": formulario.dni.value,
+            "telephone": formulario.telefono.value,
+            "email": formulario.email.value,
+            "inscription type": formulario.inscripciones.value,
+            "start date": formulario.fecha_ini.value,
+            "finish date": formulario.fecha_fin.value,
         },
         success: function(data){
             $("#resUser").html(JSON.stringify(data));      },

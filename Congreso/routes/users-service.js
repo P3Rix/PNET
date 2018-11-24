@@ -36,7 +36,7 @@ Users.prototype.getAll = function (callback) {
 
 Users.prototype.update = function (_id, updatedUser, callback) {
     delete updatedUser._id;
-    return db.updateOne({_id: ObjectId(_id)}, {$set: updatedUser}, callback);};
+    return db.updateOne({DNI: _id}, {$set: updatedUser}, callback);};
 
 Users.prototype.remove = function (_id, choose, callback) {
     if(choose == 'telephone')
