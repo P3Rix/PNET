@@ -6,6 +6,48 @@ var global_DNI;
 
 function formatJSON(dataset, numeracionUsuario = true){
 
+	var lista = "<table id = \"outputBox\">";
+
+	j = 0;
+	lista += "<tr>";
+	for (key in dataset[0]){
+		if(j != 0)
+		{
+			
+			lista = lista + "<th>" + campos[j];
+			lista = lista + "</th>";
+			
+		}
+		j++;
+	}
+	lista += "</tr>";
+
+	for (i = 0 ; i < dataset.length ; i++){	
+		j = 0;
+		if(j!=0)
+		{
+			lista = lista + "<tr>";
+		}
+		for (key in dataset[0]){
+			if (j != 0){
+				lista = lista + "<td>";
+				lista = lista + dataset[i][key] + " ";
+				lista = lista + "</td>";
+			}
+			if (campos[j] == "DNI")
+				global_DNI = dataset[i][key];
+			j++;
+		}
+		lista = lista + "</tr>";
+	}
+	lista = lista + "</table>";
+
+
+	return lista;
+}
+
+function formatJSONuser(dataset, numeracionUsuario = true){
+
 	var lista = "<ul class = \"outputText\">";
 
 	for (i = 0 ; i < dataset.length ; i++){
@@ -44,7 +86,7 @@ function checkPressed(checkID){
 			window[checkID]();
 		else if(document.getElementById('telefono').value != "")
 			window[checkID](document.getElementById('telefono').value , 'telephone');
-		else if(document. 	getElementById('DNI').value != "")
+		else if(document.getElementById('DNI').value != "")
 			window[checkID](document.getElementById('DNI').value, 'DNI');
 		else{ 
 			document.getElementById(checkID).checked = false;
@@ -63,7 +105,7 @@ function putUser_admin(key){
 
 function html_putUser(data){
 
-	lista = formatJSON(data, false);
+	lista = formatJSONuser(data, false);
 	lista = "<h3>Datos del usuario a cambiar</h3>" + lista;
 	document.getElementById("putUserDiv").style.visibility = "visible";
 	lista = lista + formHTML(data);
