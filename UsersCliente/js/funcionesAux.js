@@ -84,10 +84,18 @@ function checkPressed(checkID){
 	if (document.getElementById(checkID).checked == true){
 		if(checkID == 'getUsers' || checkID == 'deleteUsers')
 			window[checkID]();
-		else if(document.getElementById('telefono').value != "")
-			window[checkID](document.getElementById('telefono').value , 'telephone');
-		else if(document.getElementById('DNI').value != "")
-			window[checkID](document.getElementById('DNI').value, 'DNI');
+		else if(document.getElementById('telefono').value != "" && checkID == 'getUser')
+			window[checkID](document.getElementById('telefono').value , false);
+		else if(document.getElementById('telefono').value != "" && checkID == 'putUser_admin')
+			window[checkID](document.getElementById('telefono').value , true);
+		else if(document.getElementById('DNI').value != "" && checkID == 'getUser')
+			window[checkID](document.getElementById('DNI').value, false);
+		else if(document.getElementById('DNI').value != "" && checkID == 'putUser_admin')
+			window[checkID](document.getElementById('DNI').value , true);
+		else if(document.getElementById('DNI').value != "" && checkID == "deleteUser")
+			window[checkID](document.getElementById('DNI').value);
+		else if(document.getElementById('telefono').value != "" && checkID == "deleteUser")
+			window[checkID](document.getElementById('telefono').value);
 		else{ 
 			document.getElementById(checkID).checked = false;
 			alert('Rellene el campo DNI o el campo telefono');		
