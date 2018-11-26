@@ -25,7 +25,7 @@ Mobiles.prototype.add = function (mobile, callback) {
 };
 
 Mobiles.prototype.get = function (_id, callback) {
-    return db.find({name: ObjectId(_id)}).toArray(callback);
+    return db.find({name: _id}).toArray(callback);
 };
 
 Mobiles.prototype.getAll = function (callback) {

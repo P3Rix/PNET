@@ -5,7 +5,9 @@ function getMobile(mobileId) {
     dataType: "json",
     url: myUrl,
     success: function(data) {
-    $("#resGetHello").html(data);
+    alert("Hola");
+    alert(data);
+    $("#resGetHello").html(JSON.stringify(data));
     },
     error: function(res) {
     alert("ERROR " + res.statusText);
