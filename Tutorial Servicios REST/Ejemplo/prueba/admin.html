@@ -9,8 +9,24 @@
 
     <h1>Cliente de nuestra API</h1>
 
-    <input onclick="getMobile( 'hola' )" 
+    <!-- CODIGO admin.html -->
+    <input onclick="getMobile( 'Xiaomi Mi A2 4GB+64GB' )" 
     type="button" value="Get mobile 'Xiaomi Mi A2 4GB+64GB'"/> 
+
+    <!-- CODIGO admin.html -->
+    <input onclick="postMobile()" type="button" value="POST MOBILE 'iPhone 6'"/>
+
+
+    <!-- CODIGO admin.html -->
+    <input onclick="getMobiles()" type="button" value="GET MOBILES"/>
+
+    <input type="text" id="mobileId">
+    <!-- CODIGO admin.html -->
+    <input onclick="deleteMobiles()" type="button" value="Borrar todos los moviles"/>
+    <input onclick="getMobile($('#mobileId').val())" type="button" value="GET MOBILE"/>
+    <input onclick="putMobile($('#mobileId').val())" type="button" value="PUT MOBILE"/>
+    <input onclick="deleteMobile($('#mobileId').val())"  type="button" value="Borrar movil"/>
+
 
 
     <h3 id="resGetHello"></h3>

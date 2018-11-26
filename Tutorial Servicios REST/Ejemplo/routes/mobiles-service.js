@@ -34,11 +34,10 @@ Mobiles.prototype.getAll = function (callback) {
 
 Mobiles.prototype.update = function (_id, updatedMobile, callback) {
     delete updatedMobile._id;
-    return db.updateOne({_id: ObjectId(_id)}, {$set:
-    updatedMobile}, callback);};
+    return db.updateOne({name: (_id)}, {$set: updatedMobile}, callback);};
 
 Mobiles.prototype.remove = function (_id, callback) {
-    return db.deleteOne({_id: ObjectId(_id)}, callback);
+    return db.deleteOne({name: (_id)}, callback);
 };
 
 Mobiles.prototype.removeAll = function (callback) {
