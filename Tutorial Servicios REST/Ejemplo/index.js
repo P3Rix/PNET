@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 const baseAPI = '/api/v1';
 const mobiles = require('./routes/mobiles');
+const mobilesService = require('./routes/mobiles-service');
 const cors = require('cors');
 
 app.use(cors());
@@ -25,7 +26,12 @@ app.get('/', function (req, res) {
 app.use('/mobiles', mobiles);
     
 const server = http.createServer(app);
-server.listen(PORT, function () {
-console.log('Server up and running on localhost:' + PORT);
+mobilesService.connectDb(function (err) {
+    if (err) {
+    console.log("Could not connect with MongoDB - moviesService");
+    process.exit(1);
+    }
+    server.listen(PORT, function () {
+    console.log('Server up and running on localhost:' + PORT);
+    });
 });
-
