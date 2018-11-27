@@ -66,7 +66,6 @@ function getUser(key, put = false){
 }
 
 function putUser(formulario, dni){
-    alert(dni);
     $.ajax({
         type: "PUT",        
         url: "http://localhost:8080/users/" + dni,
