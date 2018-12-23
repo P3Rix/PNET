@@ -1,6 +1,5 @@
-package uca.es.prueba;
+package uca.es.congress;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -8,17 +7,13 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -26,23 +21,17 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity {
-    /*
-    private Button buttonAceptar;
-    private TextView TxtName;
-    private EditText editText; */
+public class UsersActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button btnStart;
-    private static ArrayList<Mobiles> mobiles;
-
+    private static ArrayList<Users> users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_users);
         // Referenciamos al RecyclerView
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
@@ -51,38 +40,14 @@ public class MainActivity extends AppCompatActivity {
         // Mejoramos rendimiento con esta configuración
         mRecyclerView.setHasFixedSize(true);
 
-        mobiles = new ArrayList<Mobiles>();
+        users = new ArrayList<Users>();
 
         // Creamos un LinearLayoutManager para gestionar el item.xml creado antes
         mLayoutManager = new LinearLayoutManager(this);
         // Lo asociamos al RecyclerView
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // Creamos un ArrayList de Pokemons
-        /*
-        ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
-        // Creamos un PokemonAdapter pasándole todos nuestro Pokemons
-        mAdapter = new uca.es.test.PokemonAdapter(pokemons);
-    // Asociamos el adaptador al RecyclerView
-        mRecyclerView.setAdapter(mAdapter);
-
-        pokemons.add(new Pokemon(1, "Bulbasaur"));
-        pokemons.add(new Pokemon(2, "Ivysaur"));
-        pokemons.add(new Pokemon(3, "Venusaur"));
-
-        pokemons.add(new Pokemon(4, "Charmander"));
-        pokemons.add(new Pokemon(5, "Charmeleon"));
-        pokemons.add(new Pokemon(6, "Charizard"));
-
-        pokemons.add(new Pokemon(7, "Squirtle"));
-        pokemons.add(new Pokemon(8, "Wartortle"));
-        pokemons.add(new Pokemon(9, "Blastoise")); */
-
-
-
-
-
-        mobiles.add(new Mobiles("hola", "hola", 2));
+        //mobiles.add(new Mobiles("hola", "hola", 2));
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,25 +57,34 @@ public class MainActivity extends AppCompatActivity {
                 //tarea1.execute();
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
 
-        /*
-        buttonAceptar = (Button) findViewById(R.id.mybutton);
-        TxtName = (TextView) findViewById(R.id.mytext);
-        editText = (EditText) findViewById(R.id.myedittext);
-        */
+        if(id == R.id.see_users)
+        {
+            Intent intent = new Intent(this, UsersActivity.class);
+            startActivity(intent);
+        }
 
-        /*
-        buttonAceptar.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //String name = "CAMBIADO";
-                        TxtName.setText(editText.getText().toString());
-                    }
-                }); */
+        return super.onOptionsItemSelected(item);
     }
 
     public class LongRunningGetIO extends AsyncTask<Void, Void, String> {
@@ -120,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             String text = null;
             //HttpURLConnection urlConnection = null;
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url("http://127.0.0.1:8080/mobiles")
+            Request request = new Request.Builder().url("http://192.168.1.22:8080/users")
                     .build();
             try {
                 /*
@@ -146,28 +120,34 @@ public class MainActivity extends AppCompatActivity {
             //JSONObject respJson = null;
             JSONArray json = null;
             Log.d("Fanny3", "HOLA");
-            if(results == null)
-            {
+            if (results == null) {
                 Log.d("Fanny4", "HOLA");
             }
             if (results != null) {
-                try{
+                try {
+                    Log.d("Fanny4", results);
                     json = new JSONArray(results);
-                    for(int i = 0; i < json.length(); i++)
-                    {
-                        int price = Integer.parseInt(json.getJSONObject(i).get("price").toString());
-                        mobiles.add(new Mobiles(json.getJSONObject(i).get("brand").toString(),
-                                json.getJSONObject(i).get("name").toString(), price));
+                    Log.d("Cantidad", Integer.toString(json.length()));
+                    for (int i = 0; i < json.length(); i++) {
+                        Log.d("Fanny4", "DEBERIA FUNCIONAR");
+                        users.add(new Users(json.getJSONObject(i).get("firstname").toString(),
+                                json.getJSONObject(i).get("lastname").toString(),
+                                json.getJSONObject(i).get("DNI").toString(),
+                                Integer.parseInt(json.getJSONObject(i).get("telephone").toString()),
+                                json.getJSONObject(i).get("email").toString(),
+                                json.getJSONObject(i).get("start date").toString(),
+                                json.getJSONObject(i).get("finish date").toString()));
+                        Log.d("Fanny4", "DEBERIA FUNCIONAR");
                     }
 
-                    mAdapter = new uca.es.prueba.MobilesAdapter(mobiles);
+                    mAdapter = new UsersAdapter(users);
 
                     mRecyclerView.setAdapter(mAdapter);
-                }catch(JSONException e)
-                {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         }
+
     }
-}
+    }
