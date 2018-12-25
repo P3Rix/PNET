@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="uca.es.congress">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -21,9 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UsersActivity"
-                android:label ="Users"
-                android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".UsersActivity"
+            android:label="Users"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ProgramActivity"
+            android:label="Program"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
