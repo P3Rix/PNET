@@ -25,8 +25,13 @@
             android:name=".UsersActivity"
             android:label="Users"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".ProgramActivity"
+        <activity
+            android:name=".ProgramActivity"
             android:label="Program"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DatesActivity"
+            android:label="Date"
             android:parentActivityName=".MainActivity"></activity>
     </application>
 

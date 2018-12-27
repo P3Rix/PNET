@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".DatesActivity"
+    android:id="@+id/datesview">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dates"
+        android:textSize="25sp"
+        />
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:maxDate="12/29/2018"
+        android:minDate="12/26/2018"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></CalendarView>
+
+    <TextView
+        android:id="@+id/datetext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendar"
+        android:textSize="25sp"/>
+
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/datetext"
+        android:src="@drawable/prueba" />
+
+</RelativeLayout>
