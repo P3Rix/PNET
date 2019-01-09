@@ -18,8 +18,8 @@
 
     <CalendarView
         android:id="@+id/calendar"
-        android:maxDate="12/29/2018"
-        android:minDate="12/26/2018"
+        android:maxDate="01/18/2019"
+        android:minDate="01/15/2019"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></CalendarView>
 

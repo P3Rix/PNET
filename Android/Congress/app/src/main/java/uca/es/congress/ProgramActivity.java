@@ -64,6 +64,12 @@ public class ProgramActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+        if(id == R.id.dates)
+        {
+            Intent intent = new Intent(this, DatesActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
