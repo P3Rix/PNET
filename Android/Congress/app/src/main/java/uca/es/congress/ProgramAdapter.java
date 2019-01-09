@@ -1,11 +1,13 @@
 package uca.es.congress;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,10 +51,11 @@ public class ProgramAdapter extends BaseAdapter{
         ImageView imgFoto = (ImageView) convertView.findViewById(R.id.imageView_imagen);
         TextView horario = (TextView) convertView.findViewById(R.id.textView_superior);
 
+        Log.d("program", "He llegado");
         imgFoto.setImageResource(item.getImgFoto());
         horario.setText(item.getHorario());
 
-
+        Log.d("program", "He llegado");
         return convertView;
     }
 }

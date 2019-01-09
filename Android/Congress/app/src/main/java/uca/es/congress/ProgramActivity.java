@@ -26,8 +26,8 @@ public class ProgramActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_program);
         ArrayList<Programa> list = new ArrayList<>();
-        list.add(new Programa(R.drawable.android, "15:00-16:00"));
-        list.add(new Programa(R.drawable.apple, "16:00-17:00"));
+        list.add(new Programa(R.mipmap.android, "15:00-16:00"));
+        list.add(new Programa(R.mipmap.apple, "16:00-17:00"));
         items = (ListView)findViewById(R.id.items);
         adapter = new ProgramAdapter(this, list);
         items.setAdapter(adapter);
