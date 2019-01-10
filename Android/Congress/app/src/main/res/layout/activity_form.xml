@@ -25,8 +25,16 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editemail"
+        android:id="@+id/editdni"
         android:layout_below="@id/editlastname"
+        android:text="write your lastname"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editemail"
+        android:layout_below="@id/editdni"
         android:text="write your email"
         />
 
@@ -54,7 +62,7 @@
         android:layout_marginLeft="300dp"
         android:layout_marginRight="-85dp"
         android:entries="@array/feedbacktypelist"
-        android:prompt="Enter number of days"></Spinner>/>
+        ></Spinner>/>
 
 
     <TextView
@@ -74,6 +82,7 @@
         />
 
     <Button
+        android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editenddate"

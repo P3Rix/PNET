@@ -27,6 +27,7 @@ public class UsersActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button btnStart;
+    private Button addButton;
     private static ArrayList<Users> users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class UsersActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
         btnStart = (Button) findViewById(R.id.btnStart);
-
+        addButton = (Button) findViewById(R.id.Add);
         // Mejoramos rendimiento con esta configuración
         mRecyclerView.setHasFixedSize(true);
 
@@ -55,6 +56,15 @@ public class UsersActivity extends AppCompatActivity {
                 new LongRunningGetIO().execute();
                 //tarea1 = new MiTareaAsincrona();
                 //tarea1.execute();
+            }
+        });
+
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FormActivity.class);
+                startActivity(intent);
             }
         });
     }
