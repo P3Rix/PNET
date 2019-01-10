@@ -9,20 +9,21 @@
     tools:context=".UsersActivity">
 
     <Button
-        android:id="@+id/btnStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INICIAR"/>
-
-    <Button
         android:id="@+id/Add"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add user"/>
+        android:layout_height="30dp"
+        android:layout_marginLeft="140dp"
+        android:text="Add user"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
+
+
+
+
 </LinearLayout>

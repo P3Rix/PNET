@@ -31,7 +31,7 @@ public class UsersAdapter
         public MyViewHolder(View v) {
             super(v);
             name = (TextView) v.findViewById(R.id.name);
-            lastname = (TextView) v.findViewById(R.id.lastname);
+            //lastname = (TextView) v.findViewById(R.id.lastname);
             dni = (TextView) v.findViewById(R.id.dni);
             telephone = (TextView) v.findViewById(R.id.telephone);
             email = (TextView) v.findViewById(R.id.email);
@@ -56,7 +56,7 @@ public class UsersAdapter
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.name.setText(String.valueOf(users.get(position).getName()));
-        holder.lastname.setText(users.get(position).getLastname());
+        //holder.lastname.setText(users.get(position).getLastname());
         holder.dni.setText(String.valueOf(users.get(position).getDni()));
         holder.telephone.setText(String.valueOf(users.get(position).getTelephone()));
         holder.email.setText(String.valueOf(users.get(position).getEmail()));
