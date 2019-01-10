@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editname"
+        android:text="write your name"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editlastname"
+        android:layout_below="@id/editname"
+        android:text="write your lastname"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editemail"
+        android:layout_below="@id/editlastname"
+        android:text="write your email"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittelephone"
+        android:layout_below="@id/editemail"
+        android:text="write your telephone"
+        />
+
+    <TextView
+        android:id="@+id/textspinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittelephone"
+        android:text="Select numer of days" />
+
+    <Spinner
+        android:id="@+id/SpinnerFeedbackType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textspinner"
+        android:layout_alignRight="@+id/textspinner"
+        android:layout_marginLeft="300dp"
+        android:layout_marginRight="-85dp"
+        android:entries="@array/feedbacktypelist"
+        android:prompt="Enter number of days"></Spinner>/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editstartdate"
+        android:layout_below="@id/SpinnerFeedbackType"
+        android:text="Select your start date"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editenddate"
+        android:layout_below="@id/editstartdate"
+        android:text="Select your end date"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editenddate"
+        android:text="Send"/>
+
+
+
+
+
+</RelativeLayout>

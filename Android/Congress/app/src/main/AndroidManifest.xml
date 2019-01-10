@@ -32,7 +32,8 @@
         <activity
             android:name=".DatesActivity"
             android:label="Date"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".FormActivity"></activity>
     </application>
 
 </manifest>
