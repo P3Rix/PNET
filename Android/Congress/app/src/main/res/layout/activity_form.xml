@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editdni"
         android:layout_below="@id/editlastname"
-        android:text="write your lastname"
+        android:text="write your dni"
         />
 
     <EditText

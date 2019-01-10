@@ -82,14 +82,15 @@
 
             <Button
                 android:id="@+id/show"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="55sp"
+                android:layout_height="30sp"
                 android:layout_gravity="center"
                 android:background="@color/colorAccent"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:padding="5dp"
                 android:text="SHOW"
+                android:textSize="10dp"
                 android:textColor="#FFF" />
         </LinearLayout>
     </android.support.v7.widget.CardView>

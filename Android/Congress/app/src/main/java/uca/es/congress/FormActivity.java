@@ -34,6 +34,7 @@ public class FormActivity extends AppCompatActivity {
 
     private EditText name;
     private EditText lastname;
+    private EditText email;
     private EditText dni;
     private EditText telephone;
     private Spinner type;
@@ -131,27 +132,31 @@ public class FormActivity extends AppCompatActivity {
             String text = null;
             //HttpURLConnection urlConnection = null;
             OkHttpClient client = new OkHttpClient();
-            JSONObject json = null;
+            JSONObject json = new JSONObject();
             name = (EditText) findViewById(R.id.editname);
             lastname = (EditText) findViewById(R.id.editlastname);
+            email = (EditText) findViewById((R.id.editemail));
             dni = (EditText) findViewById(R.id.editdni);
             telephone = (EditText) findViewById(R.id.edittelephone);
             type = (Spinner) findViewById(R.id.SpinnerFeedbackType);
 
+            int telephoneint = Integer.parseInt(telephone.getText().toString());
+
             try{
-                json.put("name", name.getText().toString());
+                json.put("firstname", name.getText().toString());
                 json.put("lastname", lastname.getText().toString());
-                json.put("dni", dni.getText().toString());
-                json.put("telephone", telephone.getText().toString());
+                json.put("DNI", dni.getText().toString());
+                json.put("telephone", telephoneint);
+                json.put("email", email.getText().toString());
                 json.put("Inscription type", type.getSelectedItem().toString());
-                json.put("Start day", displaydate.getText().toString());
-                json.put("End day", displaydateend.getText().toString());
+                json.put("start date", displaydate.getText().toString());
+                json.put("finish date", displaydateend.getText().toString());
             }catch (JSONException e) {
                 e.printStackTrace();
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://192.168.1.22:8080/users")
+            Request request = new Request.Builder().url("http://192.168.1.15:8080/users")
                     .post(body)
                     .build();
             try {
