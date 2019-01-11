@@ -1,6 +1,7 @@
 package uca.es.congress;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -110,14 +111,53 @@ public class FormActivity extends AppCompatActivity {
             }
         };
 
-        sendBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new LongRunningGetIOPOST().execute();
-                //tarea1 = new MiTareaAsincrona();
-                //tarea1.execute();
-            }
-        });
+        Intent i = getIntent();
+        Users user = (Users)i.getSerializableExtra("editUser");
+
+        if(user == null)
+        {
+            sendBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new LongRunningGetIOPOST().execute();
+                    Intent i = new Intent(v.getContext(), UsersActivity.class);
+                    startActivity(i);
+                }
+            });
+        }
+
+        else
+        {
+            name = (EditText) findViewById(R.id.editname);
+            lastname = (EditText) findViewById(R.id.editlastname);
+            email = (EditText) findViewById((R.id.editemail));
+            dni = (EditText) findViewById(R.id.editdni);
+            telephone = (EditText) findViewById(R.id.edittelephone);
+            type = (Spinner) findViewById(R.id.SpinnerFeedbackType);
+            String telephonestring = Integer.toString(user.getTelephone());
+            name.setText(user.getName());
+            lastname.setText(user.getLastname());
+            dni.setText(user.getDni());
+            email.setText(user.getEmail());
+            telephone.setText(telephonestring);
+            type.setSelection(user.getType() - 1);
+            displaydate.setText(user.getStart_date());
+            displaydateend.setText(user.getEnd_date());
+
+            sendBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new LongRunningGetIOPUT().execute();
+                    Intent i = new Intent(v.getContext(), UsersActivity.class);
+                    startActivity(i);
+                    //tarea1 = new MiTareaAsincrona();
+                    //tarea1.execute();
+                }
+            });
+
+        }
+
+
 
 
 
@@ -156,7 +196,7 @@ public class FormActivity extends AppCompatActivity {
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://192.168.1.15:8080/users")
+            Request request = new Request.Builder().url("http://10.182.105.89:8080/users")
                     .post(body)
                     .build();
             try {
@@ -177,6 +217,59 @@ public class FormActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Fallo al insertar",Toast.LENGTH_LONG).show();
             else
                 Toast.makeText(getApplicationContext(), "Usuario insertado correctamente",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public class LongRunningGetIOPUT extends AsyncTask<Void, Void, Boolean> {
+        public final MediaType JSON
+                = MediaType.parse("application/json; charset=utf-8");
+        @Override
+        protected Boolean doInBackground(Void... params) {
+
+            String text = null;
+            //HttpURLConnection urlConnection = null;
+            OkHttpClient client = new OkHttpClient();
+            JSONObject json = new JSONObject();
+
+            int telephoneint = Integer.parseInt(telephone.getText().toString());
+
+            try{
+                json.put("firstname", name.getText().toString());
+                json.put("lastname", lastname.getText().toString());
+                json.put("DNI", dni.getText().toString());
+                json.put("telephone", telephoneint);
+                json.put("email", email.getText().toString());
+                json.put("Inscription type", type.getSelectedItem().toString());
+                json.put("start date", displaydate.getText().toString());
+                json.put("finish date", displaydateend.getText().toString());
+            }catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            RequestBody body = RequestBody.create(JSON, json.toString());
+            Request request = new Request.Builder().url("http://10.182.105.89:8080/users/"+ dni.getText().toString())
+                    .put(body)
+                    .build();
+            try {
+                Response res = client.newCall(request).execute();
+                if(!res.isSuccessful())
+                    return false;
+                else
+                    return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+        //return text
+
+        @Override
+        protected void onPostExecute(Boolean results) {
+            if(!results)
+                Toast.makeText(getApplicationContext(), "Fallo al modificar",Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(getApplicationContext(), "Usuario modificado correctamente",Toast.LENGTH_LONG).show();
+
         }
 
     }

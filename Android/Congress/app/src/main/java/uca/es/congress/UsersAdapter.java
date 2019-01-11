@@ -1,6 +1,7 @@
 package uca.es.congress;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,11 +67,10 @@ public class UsersAdapter
         holder.show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence text = "You've clicked on " + users.get(position).getName();
-                int duration = Toast.LENGTH_LONG;
-                //new MainActivity.LongRunningGetIO().execute();
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Intent i = new Intent(v.getContext(), UserinformationActivity.class);
+                Users user = users.get(position);
+                i.putExtra("sampleObject", user);
+                v.getContext().startActivity(i);
             }
         });
     }

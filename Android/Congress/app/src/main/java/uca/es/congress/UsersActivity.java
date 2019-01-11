@@ -102,7 +102,7 @@ public class UsersActivity extends AppCompatActivity {
             String text = null;
             //HttpURLConnection urlConnection = null;
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url("http://192.168.1.15:8080/users")
+            Request request = new Request.Builder().url("http://10.182.105.89:8080/users")
                     .build();
             try {
                 /*
@@ -144,7 +144,8 @@ public class UsersActivity extends AppCompatActivity {
                                 Integer.parseInt(json.getJSONObject(i).get("telephone").toString()),
                                 json.getJSONObject(i).get("email").toString(),
                                 json.getJSONObject(i).get("start date").toString(),
-                                json.getJSONObject(i).get("finish date").toString()));
+                                json.getJSONObject(i).get("finish date").toString(),
+                                Integer.parseInt(json.getJSONObject(i).get("Inscription type").toString())));
                         Log.d("Fanny4", "DEBERIA FUNCIONAR");
                     }
 

@@ -1,15 +1,18 @@
 package uca.es.congress;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable {
     private String name;
     private String lastname;
     private String dni;
     private int telephone;
+    private int type;
     private String email;
     private String start_date;
     private String end_date;
 
-    public Users(String name, String lastname, String dni, int telephone, String email, String start_date, String end_date) {
+    public Users(String name, String lastname, String dni, int telephone, String email, String start_date, String end_date, int type) {
         this.name = name;
         this.lastname = lastname;
         this.dni = dni;
@@ -17,6 +20,7 @@ public class Users {
         this.email = email;
         this.start_date = start_date;
         this.end_date = end_date;
+        this.type = type;
     }
 
     public String getName() {
@@ -73,5 +77,13 @@ public class Users {
 
     public void setEnd_date(String end_date) {
         this.end_date = end_date;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }
