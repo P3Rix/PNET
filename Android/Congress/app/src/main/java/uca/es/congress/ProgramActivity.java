@@ -9,6 +9,7 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,12 +26,47 @@ public class ProgramActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_program);
-        ArrayList<Programa> list = new ArrayList<>();
-        list.add(new Programa(R.mipmap.android, "15:00-16:00"));
-        list.add(new Programa(R.mipmap.apple, "16:00-17:00"));
+
+        Button fridayButton, saturdayButton, sundayButton;
+        final ArrayList<Programa> listFriday = new ArrayList<>();
+        final ArrayList<Programa> listSaturday = new ArrayList<>();
+        final ArrayList<Programa> listSunday = new ArrayList<>();
+
+        fillArrays(listFriday, listSaturday, listSunday);
+
+        fridayButton = findViewById(R.id.ButtonFriday);
+        saturdayButton = findViewById(R.id.ButtonSaturday);
+        sundayButton = findViewById(R.id.ButtonSunday);
+
+        fridayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter = new ProgramAdapter(v.getContext(), listFriday);
+                items.setAdapter(adapter);
+            }
+        });
+
+        saturdayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter = new ProgramAdapter(v.getContext(), listSaturday);
+                items.setAdapter(adapter);
+            }
+        });
+
+
+        sundayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter = new ProgramAdapter(v.getContext(), listSunday);
+                items.setAdapter(adapter);
+            }
+        });
+
+
+        //list.add(new Programa(R.mipmap.android, "15:00-16:00"));
+        //list.add(new Programa(R.mipmap.apple, "16:00-17:00"));
         items = (ListView)findViewById(R.id.items);
-        adapter = new ProgramAdapter(this, list);
-        items.setAdapter(adapter);
     }
 
     @Override
@@ -73,6 +109,21 @@ public class ProgramActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    void fillArrays(ArrayList<Programa> listFriday, ArrayList<Programa> listSaturday,
+                    ArrayList<Programa> listSunday){
 
+        //VIERNES
+        listFriday.add(new Programa(R.mipmap.android, "15:00-16:00"));
+        listFriday.add(new Programa(R.mipmap.apple, "16:00-17:00"));
+
+        //SABADO
+        listSaturday.add(new Programa(R.mipmap.asus, "15:00-16:00"));
+        listSaturday.add(new Programa(R.mipmap.blackberry, "16:00-17:00"));
+
+        //DOMINGO
+        listSunday.add(new Programa(R.mipmap.htc, "15:00-16:00"));
+        listSunday.add(new Programa(R.mipmap.bq, "16:00-17:00"));
+
+    }
 
 }
