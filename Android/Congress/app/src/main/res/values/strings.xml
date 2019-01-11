@@ -5,4 +5,6 @@
     <string name="feedbacktype2">2</string>
     <string name="feedbacktype3">3</string>
     <string name="title_activity_location">Map</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

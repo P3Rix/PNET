@@ -102,7 +102,7 @@ public class UsersActivity extends AppCompatActivity {
             String text = null;
             //HttpURLConnection urlConnection = null;
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url("http://10.182.105.89:8080/users")
+            Request request = new Request.Builder().url("http://10.183.110.33:8080/users")
                     .build();
             try {
                 /*
