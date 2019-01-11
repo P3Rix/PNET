@@ -24,4 +24,10 @@
         android:orderInCategory="100"
         android:title="Dates"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/map"
+        android:orderInCategory="100"
+        android:title="Location"
+        app:showAsAction="never"/>
 </menu>

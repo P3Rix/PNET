@@ -107,6 +107,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
 
+            if(id == R.id.map)
+            {
+                Intent intent = new Intent(this, LocationActivity.class);
+                startActivity(intent);
+            }
+
             return super.onOptionsItemSelected(item);
         }
 
