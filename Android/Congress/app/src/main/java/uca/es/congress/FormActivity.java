@@ -196,7 +196,7 @@ public class FormActivity extends AppCompatActivity {
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://10.182.105.89:8080/users")
+            Request request = new Request.Builder().url("http://192.168.1.24:8080/users")
                     .post(body)
                     .build();
             try {
@@ -248,7 +248,7 @@ public class FormActivity extends AppCompatActivity {
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://10.182.105.89:8080/users/"+ dni.getText().toString())
+            Request request = new Request.Builder().url("http://192.168.1.24:8080/users/"+ dni.getText().toString())
                     .put(body)
                     .build();
             try {
@@ -273,4 +273,6 @@ public class FormActivity extends AppCompatActivity {
         }
 
     }
+
+
 }

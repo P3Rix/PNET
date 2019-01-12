@@ -38,11 +38,8 @@ Users.prototype.update = function (_id, updatedUser, callback) {
     delete updatedUser._id;
     return db.updateOne({DNI: _id}, {$set: updatedUser}, callback);};
 
-Users.prototype.remove = function (_id, choose, callback) {
-    if(choose == 'telephone')
-        return db.deleteOne({telephone: _id}, callback)
-    else return db.deleteOne({DNI: _id}, callback);
-    
+Users.prototype.remove = function (_id, callback) {
+    return db.deleteOne({DNI: _id}, callback);
 };
 
 Users.prototype.removeAll = function (callback) {
