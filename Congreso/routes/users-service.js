@@ -24,10 +24,8 @@ Users.prototype.add = function (user, callback) {
     return db.insert(user, callback);
 };
 
-Users.prototype.get = function (_id, choose, callback) {
-    if (choose == 'telephone')
-        return db.find({telephone: _id}).toArray(callback);
-    else return db.find({DNI: _id}).toArray(callback);
+Users.prototype.get = function (_id, callback) {
+    return db.find({DNI: _id}).toArray(callback);
 };
 
 Users.prototype.getAll = function (callback) {

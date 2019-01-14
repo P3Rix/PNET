@@ -87,13 +87,7 @@ router.delete('/:_id', function (req, res) {
 
 router.get('/:_id', function (req, res) {
     let _id = req.params._id;
-    let _cad;
-    if(!nifRexp.test(_id))
-        _cad = "telephone";
-    else
-        _cad = "dni";
-    //alert(_cad);
-    usersService.get(_id, _cad, (err, user) => {
+    usersService.get(_id, (err, user) => {
             if (err) {
                 res.status(500).send({
                     msg: err
