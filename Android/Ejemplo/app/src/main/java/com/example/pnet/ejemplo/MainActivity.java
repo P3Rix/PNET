@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), FormActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(Void... params) {
             String text = null;
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url("http://192.168.1.18:8080/users")
+            Request request = new Request.Builder().url("http://192.168.1.23:8080/users")
                     .build();
             try {
                 Response res = client.newCall(request).execute();
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             String text = null;
             OkHttpClient client = new OkHttpClient();
             String dni = DNI.getText().toString();
-            Request request = new Request.Builder().url("http://192.168.1.18:8080/users/" + dni)
+            Request request = new Request.Builder().url("http://192.168.1.23:8080/users/" + dni)
                     .build();
             try {
                 Response res = client.newCall(request).execute();
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             String text = null;
             OkHttpClient client = new OkHttpClient();
             String dni = DNI.getText().toString();
-            Request request = new Request.Builder().url("http://192.168.1.18:8080/users/"+ dni)
+            Request request = new Request.Builder().url("http://192.168.1.23:8080/users/"+ dni)
                     .delete()
                     .build();
             try {
