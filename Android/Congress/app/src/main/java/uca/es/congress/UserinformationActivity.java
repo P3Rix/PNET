@@ -28,6 +28,8 @@ public class UserinformationActivity extends AppCompatActivity {
     private TextView resInitDate;
     private TextView resEndDate;
 
+    String id;
+
     private Button editUser;
     private Button deleteUser;
 
@@ -36,13 +38,13 @@ public class UserinformationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinformation);
 
-        resName = (TextView) findViewById(R.id.resName);
-        resLastname = (TextView) findViewById(R.id.resLastname);
-        resDNI = (TextView) findViewById(R.id.resDni);
-        resemail = (TextView) findViewById(R.id.resEmail);
-        resTelephone = (TextView) findViewById(R.id.resTelephone);
-        resInitDate = (TextView) findViewById(R.id.resinitDate);
-        resEndDate = (TextView) findViewById(R.id.resendDate);
+        resName = (TextView) findViewById(R.id.name);
+        resLastname = (TextView) findViewById(R.id.lastname);
+        resDNI = (TextView) findViewById(R.id.dni);
+        resemail = (TextView) findViewById(R.id.email);
+        resTelephone = (TextView) findViewById(R.id.telephone);
+        resInitDate = (TextView) findViewById(R.id.initDate);
+        resEndDate = (TextView) findViewById(R.id.endDate);
 
         editUser = (Button) findViewById(R.id.editButton);
         deleteUser = (Button) findViewById(R.id.deleteButton);
@@ -51,14 +53,16 @@ public class UserinformationActivity extends AppCompatActivity {
         Users user = (Users)i.getSerializableExtra("sampleObject");
         final Users edit = user;
 
-        resName.setText(user.getName());
-        resLastname.setText(user.getLastname());
-        resDNI.setText(user.getDni());
-        resemail.setText(user.getEmail());
+        id = user.getDni();
+
+        resName.setText(resName.getText()+" "+ user.getName());
+        resLastname.setText(resLastname.getText() +" "+user.getLastname());
+        resDNI.setText(resDNI.getText() + " "+ user.getDni());
+        resemail.setText(resemail.getText() + " "+ user.getEmail());
         String telephone = Integer.toString(user.getTelephone());
-        resTelephone.setText(telephone);
-        resInitDate.setText(user.getStart_date());
-        resEndDate.setText(user.getEnd_date());
+        resTelephone.setText(resTelephone.getText() + " " + telephone);
+        resInitDate.setText(resInitDate.getText() + " "+ user.getStart_date());
+        resEndDate.setText(resEndDate.getText() + " "+user.getEnd_date());
 
         editUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,11 +92,10 @@ public class UserinformationActivity extends AppCompatActivity {
         protected Boolean doInBackground(Void... params) {
 
             String text = null;
-            //HttpURLConnection urlConnection = null;
             OkHttpClient client = new OkHttpClient();
 
 
-            Request request = new Request.Builder().url("http://192.168.1.24:8080/users/"+ resDNI.getText().toString())
+            Request request = new Request.Builder().url("http://192.168.1.23:8080/users/"+ id)
                     .delete()
                     .build();
             try {

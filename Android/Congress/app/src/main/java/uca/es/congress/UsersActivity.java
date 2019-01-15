@@ -92,6 +92,18 @@ public class UsersActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+        if(id == R.id.dates)
+        {
+            Intent intent = new Intent(this, DatesActivity.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.map)
+        {
+            Intent intent = new Intent(this, LocationActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -100,44 +112,28 @@ public class UsersActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             String text = null;
-            //HttpURLConnection urlConnection = null;
+
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url("http://192.168.1.24:8080/users")
+            Request request = new Request.Builder().url("http://192.168.1.23:8080/users")
                     .build();
             try {
-                /*
-                URL urlToRequest =
-                        new URL("https://jsonplaceholder.typicode.com/todos/1");
-                urlConnection = (HttpURLConnection) urlToRequest.openConnection();
-                InputStream in =
-                        new BufferedInputStream(urlConnection.getInputStream());
-                text = new Scanner(in).useDelimiter("\\A").next();*/
                 Response res = client.newCall(request).execute();
                 return res.body().string();
             } catch (Exception e) {
                 return e.toString();
-            } /*finally {
-                if (urlConnection != null) {
-                    urlConnection.disconnect();
-                } */
+            }
         }
         //return text
 
         @Override
         protected void onPostExecute(String results) {
-            //JSONObject respJson = null;
             JSONArray json = null;
-            Log.d("Fanny3", "HOLA");
             if (results == null) {
-                Log.d("Fanny4", "HOLA");
             }
             if (results != null) {
                 try {
-                    Log.d("Fanny4", results);
                     json = new JSONArray(results);
-                    Log.d("Cantidad", Integer.toString(json.length()));
                     for (int i = 0; i < json.length(); i++) {
-                        Log.d("Fanny4", "DEBERIA FUNCIONAR");
                         users.add(new Users(json.getJSONObject(i).get("firstname").toString(),
                                 json.getJSONObject(i).get("lastname").toString(),
                                 json.getJSONObject(i).get("DNI").toString(),
@@ -146,7 +142,6 @@ public class UsersActivity extends AppCompatActivity {
                                 json.getJSONObject(i).get("start date").toString(),
                                 json.getJSONObject(i).get("finish date").toString(),
                                 Integer.parseInt(json.getJSONObject(i).get("Inscription type").toString())));
-                        Log.d("Fanny4", "DEBERIA FUNCIONAR");
                     }
 
                     mAdapter = new UsersAdapter(users);

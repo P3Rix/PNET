@@ -63,9 +63,6 @@ public class ProgramActivity extends AppCompatActivity {
             }
         });
 
-
-        //list.add(new Programa(R.mipmap.android, "15:00-16:00"));
-        //list.add(new Programa(R.mipmap.apple, "16:00-17:00"));
         items = (ListView)findViewById(R.id.items);
     }
 
@@ -103,6 +100,12 @@ public class ProgramActivity extends AppCompatActivity {
         if(id == R.id.dates)
         {
             Intent intent = new Intent(this, DatesActivity.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.map)
+        {
+            Intent intent = new Intent(this, LocationActivity.class);
             startActivity(intent);
         }
 

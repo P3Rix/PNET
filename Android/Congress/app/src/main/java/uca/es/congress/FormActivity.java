@@ -170,7 +170,6 @@ public class FormActivity extends AppCompatActivity {
         protected Boolean doInBackground(Void... params) {
 
             String text = null;
-            //HttpURLConnection urlConnection = null;
             OkHttpClient client = new OkHttpClient();
             JSONObject json = new JSONObject();
             name = (EditText) findViewById(R.id.editname);
@@ -196,7 +195,7 @@ public class FormActivity extends AppCompatActivity {
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://192.168.1.24:8080/users")
+            Request request = new Request.Builder().url("http://192.168.1.23:8080/users")
                     .post(body)
                     .build();
             try {
@@ -228,7 +227,6 @@ public class FormActivity extends AppCompatActivity {
         protected Boolean doInBackground(Void... params) {
 
             String text = null;
-            //HttpURLConnection urlConnection = null;
             OkHttpClient client = new OkHttpClient();
             JSONObject json = new JSONObject();
 
@@ -248,7 +246,7 @@ public class FormActivity extends AppCompatActivity {
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://192.168.1.24:8080/users/"+ dni.getText().toString())
+            Request request = new Request.Builder().url("http://192.168.1.23:8080/users/"+ dni.getText().toString())
                     .put(body)
                     .build();
             try {

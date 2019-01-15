@@ -26,27 +26,11 @@
         android:text="Name: "/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resName"
-        android:layout_below="@id/title"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
         android:id="@+id/lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:text="Lastname: "/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resLastname"
-        android:layout_below="@id/name"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/dni"
@@ -56,26 +40,11 @@
         android:text="DNI:  "/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resDni"
-        android:layout_below="@id/lastname"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
         android:id="@+id/telephone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dni"
         android:text="Telephone: "/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resTelephone"
-        android:layout_below="@id/dni"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/initDate"
@@ -85,27 +54,12 @@
         android:text="Init date: "/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resinitDate"
-        android:layout_below="@id/telephone"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
         android:id="@+id/endDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/initDate"
         android:text="End date: "/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resendDate"
-        android:layout_below="@id/initDate"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/email"
@@ -114,13 +68,6 @@
         android:layout_below="@id/endDate"
         android:text="Email: "/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resEmail"
-        android:layout_below="@id/endDate"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/editButton"

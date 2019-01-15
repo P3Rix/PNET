@@ -41,8 +41,7 @@ public class DatesActivity extends AppCompatActivity {
 
 
         calendarView = (CalendarView) findViewById(R.id.calendar);
-        //dateDisplay = (TextView) findViewById(R.id.calendar);
-        //dateDisplay.setText("Date: ");
+
         text = (TextView) findViewById(R.id.datetext);
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -162,6 +161,12 @@ public class DatesActivity extends AppCompatActivity {
         if(id == R.id.dates)
         {
             Intent intent = new Intent(this, DatesActivity.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.map)
+        {
+            Intent intent = new Intent(this, LocationActivity.class);
             startActivity(intent);
         }
 

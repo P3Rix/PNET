@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button btnStart;
-    //private static ArrayList<Mobiles> mobiles;
     private static ArrayList<Users> users;
 
     @Override
@@ -39,16 +38,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         // Referenciamos al RecyclerView
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
@@ -65,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         // Lo asociamos al RecyclerView
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        //mobiles.add(new Mobiles("hola", "hola", 2));
 
 
     }
