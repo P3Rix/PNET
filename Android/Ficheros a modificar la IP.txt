@@ -1,0 +1,4 @@
+Archivos que hay que cambiar la ip:
+- FromActivity en la clase LongRunningGetIOPOST y la clase LongRunningGetIOPUT
+- UserInformationActivity en la clase LongRunningGetIODELETE
+- UserActivity en la clase LongRunningGetIO
