@@ -8,15 +8,10 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-
-    <Button
-        android:id="@+id/btnStart"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
-        android:text="INICIAR"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Welcome to MobileCongress's app use the overflow to navigate between views"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"

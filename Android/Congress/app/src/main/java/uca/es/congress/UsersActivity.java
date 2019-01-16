@@ -114,7 +114,7 @@ public class UsersActivity extends AppCompatActivity {
             String text = null;
 
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url("http://192.168.1.23:8080/users")
+            Request request = new Request.Builder().url("http://192.168.1.10:8080/users")
                     .build();
             try {
                 Response res = client.newCall(request).execute();

@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private Button btnStart;
     private static ArrayList<Users> users;
 
     @Override
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         // Referenciamos al RecyclerView
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        btnStart = (Button) findViewById(R.id.btnStart);
 
         // Mejoramos rendimiento con esta configuración
         mRecyclerView.setHasFixedSize(true);
@@ -53,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         // Lo asociamos al RecyclerView
         mRecyclerView.setLayoutManager(mLayoutManager);
-
 
 
     }

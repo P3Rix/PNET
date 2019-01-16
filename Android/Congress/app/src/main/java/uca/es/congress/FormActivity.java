@@ -40,6 +40,8 @@ public class FormActivity extends AppCompatActivity {
     private EditText telephone;
     private Spinner type;
 
+    String firstDni;
+
     private Button sendBtn;
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -144,6 +146,8 @@ public class FormActivity extends AppCompatActivity {
             displaydate.setText(user.getStart_date());
             displaydateend.setText(user.getEnd_date());
 
+            firstDni = user.getDni();
+
             sendBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -195,7 +199,7 @@ public class FormActivity extends AppCompatActivity {
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://192.168.1.23:8080/users")
+            Request request = new Request.Builder().url("http://192.168.1.10:8080/users")
                     .post(body)
                     .build();
             try {
@@ -246,7 +250,7 @@ public class FormActivity extends AppCompatActivity {
             }
 
             RequestBody body = RequestBody.create(JSON, json.toString());
-            Request request = new Request.Builder().url("http://192.168.1.23:8080/users/"+ dni.getText().toString())
+            Request request = new Request.Builder().url("http://192.168.1.10:8080/users/"+ firstDni)
                     .put(body)
                     .build();
             try {

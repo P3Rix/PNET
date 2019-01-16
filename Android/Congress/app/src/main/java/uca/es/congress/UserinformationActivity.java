@@ -95,7 +95,7 @@ public class UserinformationActivity extends AppCompatActivity {
             OkHttpClient client = new OkHttpClient();
 
 
-            Request request = new Request.Builder().url("http://192.168.1.23:8080/users/"+ id)
+            Request request = new Request.Builder().url("http://192.168.1.10:8080/users/"+ id)
                     .delete()
                     .build();
             try {

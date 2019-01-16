@@ -118,14 +118,20 @@ public class ProgramActivity extends AppCompatActivity {
         //VIERNES
         listFriday.add(new Programa(R.mipmap.android, "15:00-16:00"));
         listFriday.add(new Programa(R.mipmap.apple, "16:00-17:00"));
+        listFriday.add(new Programa(R.mipmap.lg, "17:00-18:00"));
+        listFriday.add(new Programa(R.mipmap.apple, "18:00-19:00"));
 
         //SABADO
         listSaturday.add(new Programa(R.mipmap.asus, "15:00-16:00"));
         listSaturday.add(new Programa(R.mipmap.blackberry, "16:00-17:00"));
+        listSaturday.add(new Programa(R.mipmap.oneplus, "17:00-18:00"));
+        listSaturday.add(new Programa(R.mipmap.huawei, "18:00-19:00"));
+        listSaturday.add(new Programa(R.mipmap.mi, "19:30-20:30"));
 
         //DOMINGO
         listSunday.add(new Programa(R.mipmap.htc, "15:00-16:00"));
         listSunday.add(new Programa(R.mipmap.bq, "16:00-17:00"));
+        listSunday.add(new Programa(R.mipmap.microsoft, "17:00-18:00"));
 
     }
 
