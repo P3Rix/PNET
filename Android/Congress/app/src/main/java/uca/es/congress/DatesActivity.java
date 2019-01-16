@@ -79,7 +79,7 @@ public class DatesActivity extends AppCompatActivity {
                                 .setContentInfo("4")
                                 .setTicker("Alerta!");
 
-                        Intent notIntent = new Intent(DatesActivity.this, MainActivity.class); //EL SEGUNDO PARAMETRO DEBE SER LA ACTIVIDAD DE LOCALIZACIÓN
+                        Intent notIntent = new Intent(DatesActivity.this, LocationActivity.class); //EL SEGUNDO PARAMETRO DEBE SER LA ACTIVIDAD DE LOCALIZACIÓN
                         PendingIntent contIntent =
                                 PendingIntent.getActivity(DatesActivity.this, 0, notIntent, 0);
 
